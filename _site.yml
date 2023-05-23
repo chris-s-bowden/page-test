@@ -4,8 +4,10 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+      icon: fa-home
     - text: "Get Started"
       href: get_started.html
+      icon: 
     - text: "Exercises"
       menu:
       - text: "Exercise 1: Value of irrigation"
@@ -22,10 +24,13 @@ navbar:
       href: about.html
     - text: 'FAQ'
       href: faq.html
-    - text: 'Launch app'
+    - text: ' Launch App'
       href: https://tinyurl.com/aquaplan
+      icon: fa-rocket
 output:
   html_document:
     includes:
+      in_header: header.html
       after_body: include_footer.html
+    theme: darkly
 output_dir: "docs"
