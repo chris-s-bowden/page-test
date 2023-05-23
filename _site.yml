@@ -4,6 +4,24 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Get Started"
+      href: get_started.html
+    - text: "Exercises"
+      menu:
+      - text: "Exercise 1: Value of irrigation"
+        href: value_of_irri.html
+      - text: "Exercise 2: Agriculture's water footprint"
+        href: water_footprint.html
+      - text: "Exercise 3: Crop-water production function"
+        href: production_function.html
+      - text: "Exercise 4: Impact of crop-water functions"
+        href: function_impact.html
+      - text: "Exercise 5: Climate change impacts"
+        href: cc_impacts.html
     - text: "About"
       href: about.html
+    - text: 'FAQ'
+      href: faq.html
+      - text: 'Launch app'
+      href: launch.html
 output_dir: "docs"

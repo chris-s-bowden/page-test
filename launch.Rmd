@@ -1,0 +1,20 @@
+---  
+title: "Launch"  
+output: html_document  
+---  
+
+```{r setup, include=FALSE}  
+knitr::opts_chunk$set(echo = TRUE)  
+library(knitr)  
+```  
+
+[google](https://www.google.com)  
+...
+
+```{js, echo=FALSE}  
+(function() {  
+  for (const link of document.getElementsByTagName('a')) {  
+    if (/^(https?:)?\/\//.test(link.getAttribute('href'))) link.target = '_blank';  
+  }  
+})();  
+```  

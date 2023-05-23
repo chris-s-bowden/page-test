@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "water_footprint"
 author: "Chris Bowden"
 date: "2023-05-23"
 output: html_document
