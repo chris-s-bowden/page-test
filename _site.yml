@@ -22,6 +22,10 @@ navbar:
       href: about.html
     - text: 'FAQ'
       href: faq.html
-      - text: 'Launch app'
-      href: launch.html
+    - text: 'Launch app'
+      href: https://tinyurl.com/aquaplan
+output:
+  html_document:
+    includes:
+      after_body: include_footer.html
 output_dir: "docs"
