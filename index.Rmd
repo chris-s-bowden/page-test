@@ -1,8 +1,10 @@
 ---
 title: "AquaPlan"
 ---
-
+ 
 AquaPlan is a powerful crop management tool that enables farmers, businesses, and governments to make more informed decisions about water management, irrigation investment, and climate risks. Under the hood, it leverages [AquaCrop-OSPy](https://github.com/aquacropos/aquacrop), the open-source Python implementation of the [AquaCrop](https://www.fao.org/aquacrop/en/) crop-growth model produced by the Food and Agriculture Organization of the United Nations (FAO). AquaCrop is used by scientists and researchers around the world to simulate how crops are impacted by water management decisions and climate variability.
+
+\
 
 AquaPlan currently has five applications:
 
@@ -15,5 +17,7 @@ AquaPlan currently has five applications:
 4. **Regional simulations**: This application extends the single- point functionality of the Value of Irrigation tool to enable users to run AquaPlan over multiple points or grid cells for a user-defined area of interest. Simulated crop yield and irrigation demands can then be visualised on an interactive map, allowing easy spatial comparisons of yields and value of irrigation across a region.
 
 5. **Customize Crop Parameters**:This tool enables users to alter the default crop parameters in AquaCrop-OSPy. A user can define their own custom crops to better reflect the varieties in their chosen region. These customized crops can then be uploaded to any of the applications within AquaPlan, or used within AquaCrop-OSPy simulations outside of AquaPlan.
+
+\
 
 More information, including screenshots and gifs, can be found at The University of Manchester's [article](https://www.manchester.ac.uk/discover/news/manchester-scientists-launch-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment/), Tim Foster's medium [post](https://medium.com/@agwater/aquaplan-a-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment-82c50cb10144), or twitter [thread](https://twitter.com/tim_foster_88/status/1557728807758737408).
