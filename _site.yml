@@ -1,6 +1,6 @@
 name: "my-website"
 navbar:
-  title: "My Website"
+  title: "AquaPlan"
   left:
     - text: "Home"
       href: index.html
@@ -29,6 +29,8 @@ navbar:
       icon: fa-rocket
 output:
   html_document:
+    toc: true
+    toc_float: true
     includes:
       in_header: header.html
       after_body: include_footer.html
