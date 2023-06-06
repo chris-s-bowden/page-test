@@ -1,5 +1,5 @@
 ---
-title: "get_started"
+title: "Get Started"
 author: "Chris Bowden"
 date: "2023-05-23"
 output: html_document
@@ -9,22 +9,35 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Local installation
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+The AquaPlan web-app is hosted online for your convenience. However, for prolonged or intensive usage, you will find it easier to create a locally-hosted instance of AquaPlan. The following steps describe how to host AquaPlan locally on your machine, assuming no prior knowledge of hosting or cloning repositories. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The AquaPlan repository ('repo') is currently private, so you will need to gain access before continuing with this guide.
 
-```{r cars}
-summary(cars)
+## Create fork
+
+We begin by creating a fork from the main AquaPlan repo. By forking the repo, we copy its contents into a duplicate repo. This acts as a safety measure to prevent unchecked changes accidentally being made to the main repo, which is currently used to generate the live web-app.
+
+To create a fork, navigate to the AquaPlan repo, locate the 'Fork' drop-down menu (shown below) and select 'Create a new fork'. Then, follow the dialogue prompts to choose a location for your fork.
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_0_A.png')
 ```
 
-## Including Plots
+## Clone fork to local machine
 
-You can also embed plots, for example:
+test
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+## Create 'conda' environment
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+test
+
+## Install required packages
+
+test
+
+## Run app locally
+
+test
+

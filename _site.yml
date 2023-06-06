@@ -29,8 +29,10 @@ navbar:
       icon: fa-rocket
 output:
   html_document:
+    css: style.css
     toc: true
     toc_float: true
+    highlight: tango 
     includes:
       in_header: header.html
       after_body: include_footer.html

@@ -11,7 +11,7 @@
 
 
 
-<title>My Website</title>
+<title>AquaPlan</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -33,8 +33,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.ico"/>
@@ -48,22 +46,13 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -380,22 +369,68 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">My Website</h1>
+<h1 class="title toc-ignore">AquaPlan</h1>
 
 </div>
 
 
-<p>Hello, Website!</p>
-<p>For more information about simple R Markdown websites, please read
-the documentation at <a
-href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html"
-class="uri">https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html</a>.</p>
-<p>Please also note that simple R Markdown sites are <em>not</em> based
-on <strong>blogdown</strong>. They are probably good for websites with
-only a few Rmd documents. For larger-scale and more sophisticated
-websites (such as blogs), you may want to use <strong>blogdown</strong>
-instead: <a href="https://github.com/rstudio/blogdown"
-class="uri">https://github.com/rstudio/blogdown</a>.</p>
+<p>AquaPlan is a powerful crop management tool that enables farmers,
+businesses, and governments to make more informed decisions about water
+management, irrigation investment, and climate risks. Under the hood, it
+leverages <a
+href="https://github.com/aquacropos/aquacrop">AquaCrop-OSPy</a>, the
+open-source Python implementation of the <a
+href="https://www.fao.org/aquacrop/en/">AquaCrop</a> crop-growth model
+produced by the Food and Agriculture Organization of the United Nations
+(FAO). AquaCrop is used by scientists and researchers around the world
+to simulate how crops are impacted by water management decisions and
+climate variability.</p>
+<p>AquaPlan currently has five applications:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Value of Irrigation</strong>: This application provides
+crop yield and irrigation water use calculations for any user specified
+cropping system and region around the world. Results of these
+calculations can be viewed as interactive graphs of expected crop yields
+under both rainfed and irrigated conditions.</p></li>
+<li><p><strong>Crop-Water Production Function</strong>: This application
+enables users to develop crop-water production functions representing
+the relationship between applied irrigation and crop yields for
+different agricultural production systems in any region around the
+world. User-generated crop-water production functions provide
+information about optimal field-level irrigation decisions, which can
+also be used to support basin-scale analysis of water policies,
+projects, and scarcity.</p></li>
+<li><p><strong>Climate Change Impacts</strong>: This application can be
+used to simulate the impacts of climate change on crop yields and
+irrigation water demands for a user-specified cropping system. Users can
+run up to four CMIP6 baseline or projected scenarios, enabling
+comparison of climate impacts across different climate models, time
+periods, and/or shared socio-economic pathways. Downloading and
+pre-processing of CMIP6 climate data needed to run AquaPlan is automated
+by the CMIP6 data downloader tool, simplifying substantially the complex
+and time-consuming task of downloading and processing CMIP6
+data.</p></li>
+<li><p><strong>Regional simulations</strong>: This application extends
+the single- point functionality of the Value of Irrigation tool to
+enable users to run AquaPlan over multiple points or grid cells for a
+user-defined area of interest. Simulated crop yield and irrigation
+demands can then be visualised on an interactive map, allowing easy
+spatial comparisons of yields and value of irrigation across a
+region.</p></li>
+<li><p><strong>Customize Crop Parameters</strong>:This tool enables
+users to alter the default crop parameters in AquaCrop-OSPy. A user can
+define their own custom crops to better reflect the varieties in their
+chosen region. These customized crops can then be uploaded to any of the
+applications within AquaPlan, or used within AquaCrop-OSPy simulations
+outside of AquaPlan.</p></li>
+</ol>
+<p>More information, including screenshots and gifs, can be found at The
+University of Manchester’s <a
+href="https://www.manchester.ac.uk/discover/news/manchester-scientists-launch-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment/">article</a>,
+Tim Foster’s medium <a
+href="https://medium.com/@agwater/aquaplan-a-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment-82c50cb10144">post</a>,
+or twitter <a
+href="https://twitter.com/tim_foster_88/status/1557728807758737408">thread</a>.</p>
 
 <script type="text/javascript" src="links.js"></script>
 
