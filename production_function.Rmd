@@ -1,7 +1,5 @@
 ---
-title: "production_function"
-author: "Chris Bowden"
-date: "2023-05-23"
+title: "Assessing irrigation strategies"
 output: html_document
 ---
 
@@ -9,22 +7,99 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+Now you've got to grips with understanding how to the value of irrigation changes over different years and locations, we're going to move on to how we can use the AquaCrop model to assess different levels of irrigation perform differently in a single location over time. Using this information, we can also find the optimum amount of irrigation to apply in a given location, but also understand how this can change based on the objectives of the farmer.  
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Task 1
+## Select region
+For this workshop, all tasks will focus on soybean production in Brazil. Select a point within the highlighted region of the state of Mato Grosso ("great woods") in central Brazil, where over a quarter of all Brazilian soybeans are produced:
 
-```{r cars}
-summary(cars)
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_3_A.png')
 ```
 
-## Including Plots
+## Run AquaCrop
+Set the crop to Soybean, change the fixed production cost to \$50 and run the model.
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Interpret outputs
+Consider the Yield-Irrigation relationship graph to answer the following questions:
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 1.a.**
+
+Does the same amount of irrigation result in the same amount of yield each year? Use what you know about crop water requirements and climate variability to explain your answer.
+
+::::
+
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 1.b.**
+
+Irrigation is generally seen as a good thing for increasing crop yield, does higher irrigation always result in higher yield? For instance, does an increase of 100 mm irrigation always result in the same amount of yield increase? Explain your answers using information from the graph.
+
+::::
+
+
+
+
+# Task 2
+We can use the crop-water production function graphs to identify an optimal irrigation amount. The definition of 'optimal' varies depending on the objective of the farmer.
+
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.a.**
+
+Imagine a farmer wants to select the irrigation amount that maximises yield. Using the mean over all years, what irrigation amount would this be?
+
+::::
+
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.b.**
+
+The AquaCrop model takes into account the cost of water, the value of crop yield and fixed production costs from farm management. Now identify the level of irrigation that the farmer would pick in order to maximise profit using the mean over all years. Is this irrigation amount higher or lower than the amount that maximises yield, and why might that be?
+
+::::
+
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.c.**
+
+Do the functions of each year follow the same shape as the mean production function? Why might there not be a clear optimum amount of irrigation in some years? (i.e. why don't you see a peak followed by decline in profit?)
+
+::::
+
+
+
+# Task 3
+Check the box next to 'All stats' on the 'visualize outputs' tab. Find the year with the lowest rainfall amount (you can click the headers of the table to sort by columns). Now go back to the 'Run AquaCrop' tab and change the 'Sim Years' tab so that only your drought year is simulated by the model, e.g. 2000:
+
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_3_B.png')
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.a.**
+
+How and why does the drought year have a different economically optimal amount of irrigation?
+
+::::
+
+
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.b.**
+
+Go back to the 'Run AquaCrop' tab and change the cost of water \$1.20 to simulate high demand and low availability in a drought year. How does this price change affect the overall profits and the optimal amount of irrigation?
+
+::::
+
