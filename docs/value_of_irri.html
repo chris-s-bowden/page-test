@@ -9,11 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Chris Bowden" />
 
-<meta name="date" content="2023-05-23" />
 
-<title>value_of_irri</title>
+<title>Value of Irrigation</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -50,107 +48,6 @@
 
 
 
-<style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
-</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  background-color: #f8f8f8; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -472,39 +369,143 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">value_of_irri</h1>
-<h4 class="author">Chris Bowden</h4>
-<h4 class="date">2023-05-23</h4>
+<h1 class="title toc-ignore">Value of Irrigation</h1>
 
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see <a href="http://rmarkdown.rstudio.com"
-class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be
-generated that includes both content as well as the output of any
-embedded R code chunks within the document. You can embed an R code
-chunk like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>This week, we are beginning our journey into crop-water modelling by
+exploring the value of irrigation across space and time. We will be
+using an interactive web-app version of AquaCrop (called AquaPlan), a
+crop-water model used by the UN’s Food and Agriculture Organisation,
+that was brought into Python by the Foster lab. During this lab, you
+will improve your understanding of how the need for irrigation varies
+across locations and years due to differences in climate. Here, we
+explore the value of irrigation by examining the historical irrigation
+requirements of maize across three locations in the US.</p>
+<div id="task-1" class="section level1">
+<h1>Task 1</h1>
+<div id="select-region" class="section level2">
+<h2>Select region</h2>
+<p>We start by investigating the Eastern corn belt of the US. Begin by
+launching AquaPlan (‘Launch App’ button at the top-right of this page),
+navigating to the ‘Value of Irrigation’ tab and selecting a single point
+in Indiana or Ohio, within the region highlighted below:</p>
+<!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
+<p><img src="imgs/tut_1_A.png" width="100%" /></p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="value_of_irri_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the
-code chunk to prevent printing of the R code that generated the
-plot.</p>
+<div id="run-aquacrop" class="section level2">
+<h2>Run AquaCrop</h2>
+<p>Select the next tab ‘Run AquaCrop’ and have a look through all of the
+model parameters that can be tweaked. We’ll leave all parameters as
+their default values for now, but pay particular attention to the
+‘Irrigation’ tab. Click the ‘Run model’ button and think about the
+following question whilst the model runs.</p>
+<div class="whitebox question">
+<p><strong>Question</strong></p>
+<p>How would you expect the yield and irrigation usage to change when
+using multiple SMTs compared to a single SMT?</p>
+</div>
+<!-- could add breakdown of each slider/parameter set here? -->
+</div>
+<div id="interpret-outputs" class="section level2">
+<h2>Interpret outputs</h2>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
+following questions.</p>
+<div class="whitebox question">
+<p><strong>Question 1.a.</strong></p>
+<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the
+amount of rainfall and irrigation change over time. Is the amount of
+irrigation generally greater or less than the amount of rainfall? What
+could this mean for the crop system?</p>
+</div>
+<div class="whitebox question">
+<p><strong>Question 1.b.</strong></p>
+<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water
+productivity’ plots, do you think that rainfall in the US eastern corn
+belt is generally sufficient for the water requirements of maize? Use
+the trends you see in the two graphs to explain why you think this
+way.</p>
+</div>
+<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a
+screenshot of these three plots for later reference.</strong></p>
+</div>
+</div>
+<div id="task-2" class="section level1">
+<h1>Task 2</h1>
+<div id="select-region-1" class="section level2">
+<h2>Select region</h2>
+<p>We’ll now run the same model parameters but for a different point in
+the US. Return to the ‘Select region’ tab and select a point in central
+California, in the region shown below:</p>
+<p><img src="imgs/tut_1_B.png" width="100%" /> (don’t worry about the
+first marker still existing on the map, the model will only use the last
+point created)</p>
+<p>N.B. When you return to the ‘Select region’ tab, your view will be
+zoomed in very far, either scroll down or use the ‘-’ button on the map
+to zoom out.</p>
+</div>
+<div id="run-aquacrop-1" class="section level2">
+<h2>Run AquaCrop</h2>
+<p>As in the first task, go to the ‘Run AquaCrop’ tab and run the model
+again for this new location.</p>
+</div>
+<div id="interpret-outputs-1" class="section level2">
+<h2>Interpret outputs</h2>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
+following questions.</p>
+<div class="whitebox question">
+<p><strong>Question 2.a.</strong></p>
+<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the
+amount of rainfall and irrigation change over time. What differences do
+you notice between this plot and the plot from the eastern corn belt in
+the first task?</p>
+</div>
+<div class="whitebox question">
+<p><strong>Question 2.b.</strong></p>
+<p>Look at the ‘irrigation water productivity’ plot. Let’s breakdown the
+irrigated water productivity into two components: there is an associated
+benefit per a) kilo of maize produced and a cost per b) mm of
+irrigation. How then does the value of maize irrigation vary over time
+in central California compared with the eastern corn belt?</p>
+</div>
+<div class="whitebox question">
+<p><strong>Question 2.c.</strong></p>
+<p>‘Yield stability’ is an important concept in agriculture, with
+farmers generally preferring to have more predictable yields each year,
+even at a cost of maximum potential yield. Now looking at the ‘rainfed
+vs irrigated yield’ plot, what can you say about the yield stability of
+this system? How does it compare with the stability of the eastern corn
+belt and is there an associated yield cost?</p>
+</div>
+<p><strong>Again, take screenshots (‘Windows key + Shift + S’) to save
+these three plots for later reference.</strong></p>
+</div>
+</div>
+<div id="task-3" class="section level1">
+<h1>Task 3</h1>
+<p>Using what you’ve learnt over the last two tasks, answer the
+following questions based on maize in Southwestern Nebraska.</p>
+<p><img src="imgs/tut_1_C.png" width="100%" /></p>
+<div class="whitebox question">
+<p><strong>Question 3.a.</strong></p>
+<p>How does the amount and variability of rainfall differ in
+southwestern Nebraska compared to that of both central California and
+the eastern corn belt?</p>
+</div>
+<div class="whitebox question">
+<p><strong>Question 3.b.</strong></p>
+<p>How does the variability in seasonal weather that you described in
+the previous question relate to the variation in the yield benefits of
+irrigation?</p>
+</div>
+<div class="whitebox question">
+<p><strong>Question 3.c.</strong></p>
+<p>Do you notice any years which have particularly high levels of
+irrigation water productivity? Can you use differences in rainfall and
+irrigation requirements to explain why such years have a high value of
+irrigation?</p>
+</div>
 </div>
 
 <script type="text/javascript" src="links.js"></script>

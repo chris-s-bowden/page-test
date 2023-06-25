@@ -1,7 +1,5 @@
 ---
-title: "value_of_irri"
-author: "Chris Bowden"
-date: "2023-05-23"
+title: "Value of Irrigation"
 output: html_document
 ---
 
@@ -9,22 +7,114 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+This week, we are beginning our journey into crop-water modelling by exploring the value of irrigation across space and time. We will be using an interactive web-app version of AquaCrop (called AquaPlan), a crop-water model used by the UN's Food and Agriculture Organisation, that was brought into Python by the Foster lab. During this lab, you will improve your understanding of how the need for irrigation varies across locations and years due to differences in climate. Here, we explore the value of irrigation by examining the historical irrigation requirements of maize across three locations in the US. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# Task 1
+## Select region
+We start by investigating the Eastern corn belt of the US. Begin by launching AquaPlan ('Launch App' button at the top-right of this page), navigating to the 'Value of Irrigation' tab and selecting a single point in Indiana or Ohio, within the region highlighted below:
 
-```{r cars}
-summary(cars)
+<!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_A.png')
 ```
 
-## Including Plots
+## Run AquaCrop
+Select the next tab 'Run AquaCrop' and have a look through all of the model parameters that can be tweaked. We'll leave all parameters as their default values for now, but pay particular attention to the 'Irrigation' tab. Click the 'Run model' button and think about the following question whilst the model runs.
 
-You can also embed plots, for example:
+:::: {.whitebox .question data-latex="{question}"}
+**Question**
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+How would you expect the yield and irrigation usage to change when using multiple SMTs compared to a single SMT?
+::::
+
+<!-- could add breakdown of each slider/parameter set here? -->
+
+## Interpret outputs
+Use the checkboxes on the 'Visualize outputs' tab to answer the following questions.
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 1.a.**
+
+Looking at the 'total rainfed and irrigation' plot, describe how the amount of rainfall and irrigation change over time. Is the amount of irrigation generally greater or less than the amount of rainfall? What could this mean for the crop system?
+
+::::
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 1.b.**
+
+Now looking at the 'rainfed vs irrigated yield' and 'irrigation water productivity' plots, do you think that rainfall in the US eastern corn belt is generally sufficient for the water requirements of maize? Use the trends you see in the two graphs to explain why you think this way.
+
+::::
+
+**Use the shortcut 'Windows key + Shift + S' to take a screenshot of these three plots for later reference.**
+
+
+# Task 2
+## Select region
+We'll now run the same model parameters but for a different point in the US. Return to the 'Select region' tab and select a point in central California, in the region shown below:
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_B.png')
+```
+(don't worry about the first marker still existing on the map, the model will only use the last point created)
+
+N.B. When you return to the 'Select region' tab, your view will be zoomed in very far, either scroll down or use the '-' button on the map to zoom out.
+
+## Run AquaCrop
+As in the first task, go to the 'Run AquaCrop' tab and run the model again for this new location.
+
+## Interpret outputs
+Use the checkboxes on the 'Visualize outputs' tab to answer the following questions.
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.a.**
+
+Looking at the 'total rainfed and irrigation' plot, describe how the amount of rainfall and irrigation change over time. What differences do you notice between this plot and the plot from the eastern corn belt in the first task?
+
+::::
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.b.**
+
+Look at the 'irrigation water productivity' plot. Let's breakdown the irrigated water productivity into two components: there is an associated benefit per a) kilo of maize produced and a cost per b) mm of irrigation. How then does the value of maize irrigation vary over time in central California compared with the eastern corn belt?
+
+::::
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 2.c.**
+
+'Yield stability' is an important concept in agriculture, with farmers generally preferring to have more predictable yields each year, even at a cost of maximum potential yield. Now looking at the 'rainfed vs irrigated yield' plot, what can you say about the yield stability of this system? How does it compare with the stability of the eastern corn belt and is there an associated yield cost?
+
+::::
+
+**Again, take screenshots ('Windows key + Shift + S') to save these three plots for later reference.**
+
+# Task 3
+Using what you've learnt over the last two tasks, answer the following questions based on maize in Southwestern Nebraska.
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_C.png')
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.a.**
+
+How does the amount and variability of rainfall differ in southwestern Nebraska compared to that of both central California and the eastern corn belt?   
+
+::::
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.b.**
+
+How does the variability in seasonal weather that you described in the previous question relate to the variation in the yield benefits of irrigation? 
+
+::::
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.c.**
+
+Do you notice any years which have particularly high levels of irrigation water productivity? Can you use differences in rainfall and irrigation requirements to explain why such years have a high value of irrigation?
+
+::::
