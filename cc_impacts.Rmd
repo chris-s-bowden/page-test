@@ -10,7 +10,28 @@ knitr::opts_chunk$set(echo = TRUE)
 In previous labs, we've looked at how the value of irrigation and optimal strategies change in different areas over historical time. Today, we will consider how future climate change is projected to impact crop production risks. We will then explore how irrigation could help adaptation to future climates, how specific irrigation requirements may evolve and how these changing requirements vary across future scenarios and time periods. 
 
 # Step 1
+To begin, we need to download climate change projection data for a given location. We will be looking at cotton production in southeast Australia, so navigate to the 'CMIP6 data downloader' tab and select a point in the region below:
 
+\
+
+# ```{r echo=FALSE, out.width='100%'}
+# knitr::include_graphics('imgs/tut_5_A.png')
+# ```
+
+\
+
+CMIP6 is the Coupled Model Intercomparison Project phase 6 and represents an ensemble of many global climate models used to project future climate data. For our purposes, we will select just a single climate model for the sake of simplicity. Go to the 'Get scenario data' tab and select the 'EC-Earth3-Veg' model. Then, select the 'historical' scenario clcik 'Get scenario data'. Once the app has gathered the data, go to the 'View and download data' tab to download the data, saving the file to a memorable location with a concise, descriptive name. Now repeat this data downloading step for both future scenarios (SSP245 and 585) for the 2030s and 2050s. 
+
+\
+
+:::: {.infobox .info data-latex="{info}"}
+**Shared Socio-Economic Pathways (SSPs) and Representative Concentration Pathways (RCPs)**
+
+Cover basics to give context to the multiple future scenarios they're working with.
+
+::::
+
+\
 
 # Step 2
 

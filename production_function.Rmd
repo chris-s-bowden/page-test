@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Now you've got to grips with understanding how to the value of irrigation changes over different years and locations, we're going to move on to how we can use the AquaCrop model to assess different levels of irrigation perform differently in a single location over time. Using this information, we can also find the optimum amount of irrigation to apply in a given location, but also understand how this can change based on the objectives of the farmer.  
 
+\
 
 # Step 1
 ## Select region
@@ -18,13 +19,17 @@ For this workshop, all tasks will focus on soybean production in Brazil. Select 
 knitr::include_graphics('imgs/tut_3_A.png')
 ```
 
+\
+
 ## Run AquaCrop
 Set the crop to Soybean, change the fixed production cost to \$50 and run the model.
 
+\
 
 ## Interpret outputs
 Consider the Yield-Irrigation relationship graph to answer the following questions:
 
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.a.**
@@ -33,7 +38,7 @@ Does the same amount of irrigation result in the same amount of yield each year?
 
 ::::
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.b.**
@@ -42,13 +47,12 @@ Irrigation is generally seen as a good thing for increasing crop yield, does hig
 
 ::::
 
-
-
+\
 
 # Step 2
 We can use the crop-water production function graphs to identify an optimal irrigation amount. The definition of 'optimal' varies depending on the objective of the farmer.
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.a.**
@@ -57,7 +61,7 @@ Imagine a farmer wants to select the irrigation amount that maximises yield. Usi
 
 ::::
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.b.**
@@ -66,7 +70,7 @@ The AquaCrop model takes into account the cost of water, the value of crop yield
 
 ::::
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.c.**
@@ -75,7 +79,7 @@ Do the functions of each year follow the same shape as the mean production funct
 
 ::::
 
-
+\
 
 # Step 3
 Check the box next to 'All stats' on the 'visualize outputs' tab. Find the year with the lowest rainfall amount (you can click the headers of the table to sort by columns). Now go back to the 'Run AquaCrop' tab and change the 'Sim Years' tab so that only your drought year is simulated by the model, e.g. 2000:
@@ -85,7 +89,7 @@ Check the box next to 'All stats' on the 'visualize outputs' tab. Find the year 
 knitr::include_graphics('imgs/tut_3_B.png')
 ```
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 3.a.**
@@ -94,7 +98,7 @@ How and why does the drought year have a different economically optimal amount o
 
 ::::
 
-
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 3.b.**
