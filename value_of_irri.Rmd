@@ -7,26 +7,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\
+
 This week, we are beginning our journey into crop-water modelling by exploring the value of irrigation across space and time. We will be using an interactive web-app version of AquaCrop (called AquaPlan), a crop-water model used by the UN's Food and Agriculture Organisation, that was brought into Python by the Foster lab. During this lab, you will improve your understanding of how the need for irrigation varies across locations and years due to differences in climate. Here, we explore the value of irrigation by examining the historical irrigation requirements of maize across three locations in the US. 
 
+\
 
-
-# Task 1
+# Step 1
 
 ## Select region
 We start by investigating the Eastern corn belt of the US. Begin by launching AquaPlan ('Launch App' button at the top-right of this page), navigating to the 'Value of Irrigation' tab and selecting a single point in Indiana or Ohio, within the region highlighted below:
 
 <!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
 
+\
 
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('imgs/tut_1_A.png')
 ```
 
+\
 
 ## Run AquaCrop
 Select the next tab 'Run AquaCrop' and have a look through all of the model parameters that can be tweaked. We'll leave all parameters as their default values for now, but pay particular attention to the 'Irrigation' tab. Click the 'Run model' button and think about the following question whilst the model runs.
 
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question**
@@ -34,12 +39,14 @@ Select the next tab 'Run AquaCrop' and have a look through all of the model para
 How would you expect the yield and irrigation usage to change when using multiple SMTs compared to a single SMT?
 ::::
 
+\
 
 <!-- could add breakdown of each slider/parameter set here? -->
 
 ## Interpret outputs
 Use the checkboxes on the 'Visualize outputs' tab to answer the following questions.
 
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.a.**
@@ -48,6 +55,7 @@ Looking at the 'total rainfed and irrigation' plot, describe how the amount of r
 
 ::::
 
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.b.**
@@ -56,13 +64,14 @@ Now looking at the 'rainfed vs irrigated yield' and 'irrigation water productivi
 
 ::::
 
+\
 
 **Use the shortcut 'Windows key + Shift + S' to take a screenshot of these three plots for later reference.**
 
+\
 
 
-
-# Task 2
+# Step 2
 ## Select region
 We'll now run the same model parameters but for a different point in the US. Return to the 'Select region' tab and select a point in central California, in the region shown below:
 
@@ -73,7 +82,7 @@ knitr::include_graphics('imgs/tut_1_B.png')
 
 N.B. When you return to the 'Select region' tab, your view will be zoomed in very far, either scroll down or use the '-' button on the map to zoom out.
 
-
+\
 
 ## Run AquaCrop
 As in the first task, go to the 'Run AquaCrop' tab and run the model again for this new location.
@@ -82,6 +91,7 @@ As in the first task, go to the 'Run AquaCrop' tab and run the model again for t
 ## Interpret outputs
 Use the checkboxes on the 'Visualize outputs' tab to answer the following questions.
 
+\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.a.**
@@ -111,16 +121,16 @@ Look at the 'irrigation water productivity' plot. Let's breakdown the irrigated 
 
 **Again, take screenshots ('Windows key + Shift + S') to save these three plots for later reference.**
 
+\
 
-
-# Task 3
+# Step 3
 Using what you've learnt over the last two tasks, answer the following questions based on maize in Southwestern Nebraska.
 
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('imgs/tut_1_C.png')
 ```
 
-
+\
 
 
 :::: {.whitebox .question data-latex="{question}"}

@@ -1,5 +1,5 @@
 ---
-title: "cc_impacts"
+title: "Climate change impacts"
 output: html_document
 ---
 
@@ -7,10 +7,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Task 1
+In previous labs, we've looked at how the value of irrigation and optimal strategies change in different areas over historical time. Today, we will consider how future climate change is projected to impact crop production risks. We will then explore how irrigation could help adaptation to future climates, how specific irrigation requirements may evolve and how these changing requirements vary across future scenarios and time periods. 
+
+# Step 1
 
 
-# Task 2
+# Step 2
 
 
-# Task 3
+# Step 3

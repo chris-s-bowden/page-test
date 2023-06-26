@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Now you've got to grips with understanding how to the value of irrigation changes over different years and locations, we're going to move on to how we can use the AquaCrop model to assess different levels of irrigation perform differently in a single location over time. Using this information, we can also find the optimum amount of irrigation to apply in a given location, but also understand how this can change based on the objectives of the farmer.  
 
 
-# Task 1
+# Step 1
 ## Select region
 For this workshop, all tasks will focus on soybean production in Brazil. Select a point within the highlighted region of the state of Mato Grosso ("great woods") in central Brazil, where over a quarter of all Brazilian soybeans are produced:
 
@@ -45,7 +45,7 @@ Irrigation is generally seen as a good thing for increasing crop yield, does hig
 
 
 
-# Task 2
+# Step 2
 We can use the crop-water production function graphs to identify an optimal irrigation amount. The definition of 'optimal' varies depending on the objective of the farmer.
 
 
@@ -77,7 +77,7 @@ Do the functions of each year follow the same shape as the mean production funct
 
 
 
-# Task 3
+# Step 3
 Check the box next to 'All stats' on the 'visualize outputs' tab. Find the year with the lowest rainfall amount (you can click the headers of the table to sort by columns). Now go back to the 'Run AquaCrop' tab and change the 'Sim Years' tab so that only your drought year is simulated by the model, e.g. 2000:
 
 
