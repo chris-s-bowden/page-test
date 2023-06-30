@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \
 
-This week, we are beginning our journey into crop-water modelling by exploring the value of irrigation across space and time. We will be using an interactive web-app version of AquaCrop (called AquaPlan), a crop-water model used by the UN's Food and Agriculture Organisation, that was brought into Python by the Foster lab. During this lab, you will improve your understanding of how the need for irrigation varies across locations and years due to differences in climate. Here, we explore the value of irrigation by examining the historical irrigation requirements of maize across three locations in the US. 
+In this exercise, you will use the AquaPlan app to explore the value of irrigation for agricultural production, and how this value varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). In doing so, you will learn about the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing variability in yields in regions where rainfall varies substantially from one year to another. 
 
 \
 
-# Step 1
+# Site 1 - NAME, Indiana
 
-## Select region
-We start by investigating the Eastern corn belt of the US. Begin by launching AquaPlan ('Launch App' button at the top-right of this page), navigating to the 'Value of Irrigation' tab and selecting a single point in Indiana or Ohio, within the region highlighted below:
+## Select a field
+We start by investigating the Eastern corn belt of the US, a region where the majority of agriculture is currently rainfed. Begin by launching AquaPlan ('Launch App' button at the top-right of this page) and navigating to the 'Value of Irrigation' tab. Then, enter the following coordinates (COORD HERE) in the search box to select the field in the vicinity of NAME in the state of Indiana as shown on the map below. This will automatically retrieve weather data for the site from the Daymet gridded weather dataset produced by Oak Ridge National Laboratory in the United States along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).
 
 <!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
 
@@ -29,7 +29,7 @@ knitr::include_graphics('imgs/tut_1_A.png')
 \
 
 ## Run AquaCrop
-Select the next tab 'Run AquaCrop' and have a look through all of the model parameters that can be tweaked. We'll leave all parameters as their default values for now, but pay particular attention to the 'Irrigation' tab. Click the 'Run model' button and think about the following question whilst the model runs.
+Select the next tab 'Run AquaCrop' and browse through all of the model parameters that can be tweaked. Leave all parameters as their default values for now, but pay particular attention to the 'Irrigation' tab. This tab is where you adjust parameters of your irrigation system, including the application efficiency, maximum application rate or capacity of your irrigation system, and the levels of soil moisture (\% of soil water holding capacity) at which irrigation will be triggered in each of the crop's four main growth stages. Click the 'Run model' button to execute the model using the default set of parameters and geospatial weather and soil input data.
 
 \
 
@@ -44,7 +44,7 @@ How would you expect the yield and irrigation usage to change when using multipl
 <!-- could add breakdown of each slider/parameter set here? -->
 
 ## Interpret outputs
-Use the checkboxes on the 'Visualize outputs' tab to answer the following questions.
+Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore  to answer the following questions.
 
 \
 
