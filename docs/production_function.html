@@ -13,7 +13,7 @@
 
 <title>Assessing irrigation strategies</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -51,7 +51,6 @@
 
 
 
-
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -76,9 +75,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -136,15 +132,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +165,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,9 +174,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -301,7 +300,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +320,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -374,55 +373,38 @@ div.tocify {
 </div>
 
 
-<p>Now you’ve got to grips with understanding how to the value of
-irrigation changes over different years and locations, we’re going to
-move on to how we can use the AquaCrop model to assess different levels
-of irrigation perform differently in a single location over time. Using
-this information, we can also find the optimum amount of irrigation to
-apply in a given location, but also understand how this can change based
-on the objectives of the farmer.</p>
+<p>Now you’ve got to grips with understanding how to the value of irrigation changes over different years and locations, we’re going to move on to how we can use the AquaCrop model to assess different levels of irrigation perform differently in a single location over time. Using this information, we can also find the optimum amount of irrigation to apply in a given location, but also understand how this can change based on the objectives of the farmer.</p>
 <p><br />
 </p>
 <div id="step-1" class="section level1">
 <h1>Step 1</h1>
 <div id="select-region" class="section level2">
 <h2>Select region</h2>
-<p>For this workshop, all tasks will focus on soybean production in
-Brazil. Select a point within the highlighted region of the state of
-Mato Grosso (“great woods”) in central Brazil, where over a quarter of
-all Brazilian soybeans are produced:</p>
+<p>For this workshop, all tasks will focus on soybean production in Brazil. Select a point within the highlighted region of the state of Mato Grosso (“great woods”) in central Brazil, where over a quarter of all Brazilian soybeans are produced:</p>
 <p><img src="imgs/tut_3_A.png" width="100%" /></p>
 <p><br />
 </p>
 </div>
 <div id="run-aquacrop" class="section level2">
 <h2>Run AquaCrop</h2>
-<p>Set the crop to Soybean, change the fixed production cost to $50 and
-run the model.</p>
+<p>Set the crop to Soybean, change the fixed production cost to $50 and run the model.</p>
 <p><br />
 </p>
 </div>
 <div id="interpret-outputs" class="section level2">
 <h2>Interpret outputs</h2>
-<p>Consider the Yield-Irrigation relationship graph to answer the
-following questions:</p>
+<p>Consider the Yield-Irrigation relationship graph to answer the following questions:</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
-<p>Does the same amount of irrigation result in the same amount of yield
-each year? Use what you know about crop water requirements and climate
-variability to explain your answer.</p>
+<p>Does the same amount of irrigation result in the same amount of yield each year? Use what you know about crop water requirements and climate variability to explain your answer.</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Irrigation is generally seen as a good thing for increasing crop
-yield, does higher irrigation always result in higher yield? For
-instance, does an increase of 100 mm irrigation always result in the
-same amount of yield increase? Explain your answers using information
-from the graph.</p>
+<p>Irrigation is generally seen as a good thing for increasing crop yield, does higher irrigation always result in higher yield? For instance, does an increase of 100 mm irrigation always result in the same amount of yield increase? Explain your answers using information from the graph.</p>
 </div>
 <p><br />
 </p>
@@ -430,63 +412,43 @@ from the graph.</p>
 </div>
 <div id="step-2" class="section level1">
 <h1>Step 2</h1>
-<p>We can use the crop-water production function graphs to identify an
-optimal irrigation amount. The definition of ‘optimal’ varies depending
-on the objective of the farmer.</p>
+<p>We can use the crop-water production function graphs to identify an optimal irrigation amount. The definition of ‘optimal’ varies depending on the objective of the farmer.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
-<p>Imagine a farmer wants to select the irrigation amount that maximises
-yield. Using the mean over all years, what irrigation amount would this
-be?</p>
+<p>Imagine a farmer wants to select the irrigation amount that maximises yield. Using the mean over all years, what irrigation amount would this be?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>The AquaCrop model takes into account the cost of water, the value of
-crop yield and fixed production costs from farm management. Now identify
-the level of irrigation that the farmer would pick in order to maximise
-profit using the mean over all years. Is this irrigation amount higher
-or lower than the amount that maximises yield, and why might that
-be?</p>
+<p>The AquaCrop model takes into account the cost of water, the value of crop yield and fixed production costs from farm management. Now identify the level of irrigation that the farmer would pick in order to maximise profit using the mean over all years. Is this irrigation amount higher or lower than the amount that maximises yield, and why might that be?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.c.</strong></p>
-<p>Do the functions of each year follow the same shape as the mean
-production function? Why might there not be a clear optimum amount of
-irrigation in some years? (i.e. why don’t you see a peak followed by
-decline in profit?)</p>
+<p>Do the functions of each year follow the same shape as the mean production function? Why might there not be a clear optimum amount of irrigation in some years? (i.e. why don’t you see a peak followed by decline in profit?)</p>
 </div>
 <p><br />
 </p>
 </div>
 <div id="step-3" class="section level1">
 <h1>Step 3</h1>
-<p>Check the box next to ‘All stats’ on the ‘visualize outputs’ tab.
-Find the year with the lowest rainfall amount (you can click the headers
-of the table to sort by columns). Now go back to the ‘Run AquaCrop’ tab
-and change the ‘Sim Years’ tab so that only your drought year is
-simulated by the model, e.g. 2000:</p>
+<p>Check the box next to ‘All stats’ on the ‘visualize outputs’ tab. Find the year with the lowest rainfall amount (you can click the headers of the table to sort by columns). Now go back to the ‘Run AquaCrop’ tab and change the ‘Sim Years’ tab so that only your drought year is simulated by the model, e.g. 2000:</p>
 <p><img src="imgs/tut_3_B.png" width="100%" /></p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
-<p>How and why does the drought year have a different economically
-optimal amount of irrigation?</p>
+<p>How and why does the drought year have a different economically optimal amount of irrigation?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 3.b.</strong></p>
-<p>Go back to the ‘Run AquaCrop’ tab and change the cost of water $1.20
-to simulate high demand and low availability in a drought year. How does
-this price change affect the overall profits and the optimal amount of
-irrigation?</p>
+<p>Go back to the ‘Run AquaCrop’ tab and change the cost of water $1.20 to simulate high demand and low availability in a drought year. How does this price change affect the overall profits and the optimal amount of irrigation?</p>
 </div>
 </div>
 

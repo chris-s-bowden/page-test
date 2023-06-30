@@ -13,7 +13,7 @@
 
 <title>Value of Irrigation</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -51,7 +51,6 @@
 
 
 
-
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -76,9 +75,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -136,15 +132,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +165,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,9 +174,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -301,7 +300,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +320,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -376,25 +375,14 @@ div.tocify {
 
 <p><br />
 </p>
-<p>This week, we are beginning our journey into crop-water modelling by
-exploring the value of irrigation across space and time. We will be
-using an interactive web-app version of AquaCrop (called AquaPlan), a
-crop-water model used by the UN’s Food and Agriculture Organisation,
-that was brought into Python by the Foster lab. During this lab, you
-will improve your understanding of how the need for irrigation varies
-across locations and years due to differences in climate. Here, we
-explore the value of irrigation by examining the historical irrigation
-requirements of maize across three locations in the US.</p>
+<p>This week, we are beginning our journey into crop-water modelling by exploring the value of irrigation across space and time. We will be using an interactive web-app version of AquaCrop (called AquaPlan), a crop-water model used by the UN’s Food and Agriculture Organisation, that was brought into Python by the Foster lab. During this lab, you will improve your understanding of how the need for irrigation varies across locations and years due to differences in climate. Here, we explore the value of irrigation by examining the historical irrigation requirements of maize across three locations in the US.</p>
 <p><br />
 </p>
 <div id="step-1" class="section level1">
 <h1>Step 1</h1>
 <div id="select-region" class="section level2">
 <h2>Select region</h2>
-<p>We start by investigating the Eastern corn belt of the US. Begin by
-launching AquaPlan (‘Launch App’ button at the top-right of this page),
-navigating to the ‘Value of Irrigation’ tab and selecting a single point
-in Indiana or Ohio, within the region highlighted below:</p>
+<p>We start by investigating the Eastern corn belt of the US. Begin by launching AquaPlan (‘Launch App’ button at the top-right of this page), navigating to the ‘Value of Irrigation’ tab and selecting a single point in Indiana or Ohio, within the region highlighted below:</p>
 <!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
 <p><br />
 </p>
@@ -404,17 +392,12 @@ in Indiana or Ohio, within the region highlighted below:</p>
 </div>
 <div id="run-aquacrop" class="section level2">
 <h2>Run AquaCrop</h2>
-<p>Select the next tab ‘Run AquaCrop’ and have a look through all of the
-model parameters that can be tweaked. We’ll leave all parameters as
-their default values for now, but pay particular attention to the
-‘Irrigation’ tab. Click the ‘Run model’ button and think about the
-following question whilst the model runs.</p>
+<p>Select the next tab ‘Run AquaCrop’ and have a look through all of the model parameters that can be tweaked. We’ll leave all parameters as their default values for now, but pay particular attention to the ‘Irrigation’ tab. Click the ‘Run model’ button and think about the following question whilst the model runs.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question</strong></p>
-<p>How would you expect the yield and irrigation usage to change when
-using multiple SMTs compared to a single SMT?</p>
+<p>How would you expect the yield and irrigation usage to change when using multiple SMTs compared to a single SMT?</p>
 </div>
 <p><br />
 </p>
@@ -422,31 +405,22 @@ using multiple SMTs compared to a single SMT?</p>
 </div>
 <div id="interpret-outputs" class="section level2">
 <h2>Interpret outputs</h2>
-<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
-following questions.</p>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
-<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the
-amount of rainfall and irrigation change over time. Is the amount of
-irrigation generally greater or less than the amount of rainfall? What
-could this mean for the crop system?</p>
+<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the amount of rainfall and irrigation change over time. Is the amount of irrigation generally greater or less than the amount of rainfall? What could this mean for the crop system?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water
-productivity’ plots, do you think that rainfall in the US eastern corn
-belt is generally sufficient for the water requirements of maize? Use
-the trends you see in the two graphs to explain why you think this
-way.</p>
+<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water productivity’ plots, do you think that rainfall in the US eastern corn belt is generally sufficient for the water requirements of maize? Use the trends you see in the two graphs to explain why you think this way.</p>
 </div>
 <p><br />
 </p>
-<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a
-screenshot of these three plots for later reference.</strong></p>
+<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a screenshot of these three plots for later reference.</strong></p>
 <p><br />
 </p>
 </div>
@@ -455,84 +429,55 @@ screenshot of these three plots for later reference.</strong></p>
 <h1>Step 2</h1>
 <div id="select-region-1" class="section level2">
 <h2>Select region</h2>
-<p>We’ll now run the same model parameters but for a different point in
-the US. Return to the ‘Select region’ tab and select a point in central
-California, in the region shown below:</p>
-<p><img src="imgs/tut_1_B.png" width="100%" /> (don’t worry about the
-first marker still existing on the map, the model will only use the last
-point created)</p>
-<p>N.B. When you return to the ‘Select region’ tab, your view will be
-zoomed in very far, either scroll down or use the ‘-’ button on the map
-to zoom out.</p>
+<p>We’ll now run the same model parameters but for a different point in the US. Return to the ‘Select region’ tab and select a point in central California, in the region shown below:</p>
+<p><img src="imgs/tut_1_B.png" width="100%" /> (don’t worry about the first marker still existing on the map, the model will only use the last point created)</p>
+<p>N.B. When you return to the ‘Select region’ tab, your view will be zoomed in very far, either scroll down or use the ‘-’ button on the map to zoom out.</p>
 <p><br />
 </p>
 </div>
 <div id="run-aquacrop-1" class="section level2">
 <h2>Run AquaCrop</h2>
-<p>As in the first task, go to the ‘Run AquaCrop’ tab and run the model
-again for this new location.</p>
+<p>As in the first task, go to the ‘Run AquaCrop’ tab and run the model again for this new location.</p>
 </div>
 <div id="interpret-outputs-1" class="section level2">
 <h2>Interpret outputs</h2>
-<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
-following questions.</p>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
-<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the
-amount of rainfall and irrigation change over time. What differences do
-you notice between this plot and the plot from the eastern corn belt in
-the first task?</p>
+<p>Looking at the ‘total rainfed and irrigation’ plot, describe how the amount of rainfall and irrigation change over time. What differences do you notice between this plot and the plot from the eastern corn belt in the first task?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>Look at the ‘irrigation water productivity’ plot. Let’s breakdown the
-irrigated water productivity into two components: there is an associated
-benefit per a) kilo of maize produced and a cost per b) mm of
-irrigation. How then does the value of maize irrigation vary over time
-in central California compared with the eastern corn belt?</p>
+<p>Look at the ‘irrigation water productivity’ plot. Let’s breakdown the irrigated water productivity into two components: there is an associated benefit per a) kilo of maize produced and a cost per b) mm of irrigation. How then does the value of maize irrigation vary over time in central California compared with the eastern corn belt?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 2.c.</strong></p>
-<p>‘Yield stability’ is an important concept in agriculture, with
-farmers generally preferring to have more predictable yields each year,
-even at a cost of maximum potential yield. Now looking at the ‘rainfed
-vs irrigated yield’ plot, what can you say about the yield stability of
-this system? How does it compare with the stability of the eastern corn
-belt and is there an associated yield cost?</p>
+<p>‘Yield stability’ is an important concept in agriculture, with farmers generally preferring to have more predictable yields each year, even at a cost of maximum potential yield. Now looking at the ‘rainfed vs irrigated yield’ plot, what can you say about the yield stability of this system? How does it compare with the stability of the eastern corn belt and is there an associated yield cost?</p>
 </div>
-<p><strong>Again, take screenshots (‘Windows key + Shift + S’) to save
-these three plots for later reference.</strong></p>
+<p><strong>Again, take screenshots (‘Windows key + Shift + S’) to save these three plots for later reference.</strong></p>
 <p><br />
 </p>
 </div>
 </div>
 <div id="step-3" class="section level1">
 <h1>Step 3</h1>
-<p>Using what you’ve learnt over the last two tasks, answer the
-following questions based on maize in Southwestern Nebraska.</p>
+<p>Using what you’ve learnt over the last two tasks, answer the following questions based on maize in Southwestern Nebraska.</p>
 <p><img src="imgs/tut_1_C.png" width="100%" /></p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
-<p>How does the amount and variability of rainfall differ in
-southwestern Nebraska compared to that of both central California and
-the eastern corn belt?</p>
+<p>How does the amount and variability of rainfall differ in southwestern Nebraska compared to that of both central California and the eastern corn belt?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.b.</strong></p>
-<p>How does the variability in seasonal weather that you described in
-the previous question relate to the variation in the yield benefits of
-irrigation?</p>
+<p>How does the variability in seasonal weather that you described in the previous question relate to the variation in the yield benefits of irrigation?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.c.</strong></p>
-<p>Do you notice any years which have particularly high levels of
-irrigation water productivity? Can you use differences in rainfall and
-irrigation requirements to explain why such years have a high value of
-irrigation?</p>
+<p>Do you notice any years which have particularly high levels of irrigation water productivity? Can you use differences in rainfall and irrigation requirements to explain why such years have a high value of irrigation?</p>
 </div>
 </div>
 

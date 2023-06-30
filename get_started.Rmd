@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Running on a browser
 
+Some test changes here
+
 The AquaPlan app is hosted online for your convenience, using Streamlit's Community Cloud server. The app can be accessed and run using any standard web browser (Chrome, Firefox, Safari, Edge) by clicking the Launch App tab on the top menu bar of this page or by navigating manually to \url{https://www.tinyurl.com/aquaplan} in the browser. 
 
 As Streamlit's Community Cloud server only provides a limited amount of compute power, it is possible that you may experience minor delays or error messages in the event that large numbers of users are accessing the app simultaneously. In these cases, it may be necessary to reboot the app or to wait for more bandwith to free up. For a list of common error messages and associated solutions, please refer to the FAQ section on the top menu bar of this page. 
