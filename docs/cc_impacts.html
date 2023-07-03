@@ -13,7 +13,7 @@
 
 <title>Climate change impacts</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -29,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.ico"/>
 
 <style type="text/css">
@@ -45,6 +45,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 
@@ -75,6 +76,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -132,11 +136,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -165,8 +173,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -174,16 +182,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -300,7 +301,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -320,7 +321,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -373,23 +374,50 @@ div.tocify {
 </div>
 
 
-<p>In previous labs, we’ve looked at how the value of irrigation and optimal strategies change in different areas over historical time. Today, we will consider how future climate change is projected to impact crop production risks. We will then explore how irrigation could help adaptation to future climates, how specific irrigation requirements may evolve and how these changing requirements vary across future scenarios and time periods.</p>
+<p>In previous labs, we’ve looked at how the value of irrigation and
+optimal strategies change in different areas over historical time.
+Today, we will consider how future climate change is projected to impact
+crop production risks. We will then explore how irrigation could help
+adaptation to future climates, how specific irrigation requirements may
+evolve and how these changing requirements vary across future scenarios
+and time periods.</p>
 <div id="step-1" class="section level1">
 <h1>Step 1</h1>
-<p>To begin, we need to download climate change projection data for a given location. We will be looking at cotton production in southeast Australia, so navigate to the ‘CMIP6 data downloader’ tab and select a point in the region below:</p>
+<p>To begin, we need to download climate change projection data for a
+given location. We will be looking at cotton production in southeast
+Australia, so navigate to the ‘CMIP6 data downloader’ tab and select a
+point in the region below:</p>
 <p><br />
 </p>
 </div>
-<div id="r-echofalse-out.width100-knitrinclude_graphicsimgstut_5_a.png" class="section level1">
+<div id="r-echofalse-out.width100-knitrinclude_graphicsimgstut_5_a.png"
+class="section level1">
 <h1><code>{r echo=FALSE, out.width='100%'} # knitr::include_graphics('imgs/tut_5_A.png') #</code></h1>
 <p><br />
 </p>
-<p>CMIP6 is the Coupled Model Intercomparison Project phase 6 and represents an ensemble of many global climate models used to project future climate data. For our purposes, we will select just a single climate model for the sake of simplicity. Go to the ‘Get scenario data’ tab and select the ‘EC-Earth3-Veg’ model. Then, select the ‘historical’ scenario clcik ‘Get scenario data’. Once the app has gathered the data, go to the ‘View and download data’ tab to download the data, saving the file to a memorable location with a concise, descriptive name. Now repeat this data downloading step for both future scenarios (SSP245 and 585) for the 2030s and 2050s.</p>
+<p>CMIP6 is the Coupled Model Intercomparison Project phase 6 and
+represents an ensemble of many global climate models used to project
+future climate data. For our purposes, we will select just a single
+climate model for the sake of simplicity. Go to the ‘Get scenario data’
+tab and select the ‘EC-Earth3-Veg’ model. Then, select the ‘historical’
+scenario clcik ‘Get scenario data’. Once the app has gathered the data,
+go to the ‘View and download data’ tab to download the data, saving the
+file to a memorable location with a concise, descriptive name. Now
+repeat this data downloading step for both future scenarios (SSP245 and
+585) for the 2030s and 2050s.</p>
 <p><br />
 </p>
 <div class="infobox info">
-<p><strong>Shared Socio-Economic Pathways (SSPs) and Representative Concentration Pathways (RCPs)</strong></p>
-<p>Cover basics to give context to the multiple future scenarios they’re working with.</p>
+<p><strong>Shared Socio-Economic Pathways (SSPs) and Representative
+Concentration Pathways (RCPs)</strong></p>
+<p>Cover basics to give context to the multiple future scenarios they’re
+working with.</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName">
+Show/Hide Example
+</button>
+<div id="BlockName" class="collapse">
+<pre><code>&lt;img src=&quot;imgs/tut_3_A.png&quot; width=&quot;100%&quot; /&gt;</code></pre>
+</div>
 </div>
 <p><br />
 </p>

@@ -13,7 +13,7 @@
 
 <title>Value of Irrigation</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -29,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.ico"/>
 
 <style type="text/css">
@@ -45,6 +45,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 
@@ -75,6 +76,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -132,11 +136,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -165,8 +173,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -174,16 +182,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -300,7 +301,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -320,7 +321,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -375,14 +376,34 @@ div.tocify {
 
 <p><br />
 </p>
-<p>In this exercise, you will use the AquaPlan app to explore the value of irrigation for agricultural production, and how this value varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). In doing so, you will learn about the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing variability in yields in regions where rainfall varies substantially from one year to another.</p>
+<p>In this exercise, you will use the AquaPlan app to explore the value
+of irrigation for agricultural production, and how this value varies
+between different locations and over time. You will assess the yield
+benefits and water requirements for irrigated maize production in three
+locations across the United States (Indiana, California, and Nebraska),
+which vary in terms of the amount and variability of rainfall received
+during the maize growing season (May to September). In doing so, you
+will learn about the value of irrigation as a means of both increasing
+crop yields in areas with insufficient rainfall, and reducing
+variability in yields in regions where rainfall varies substantially
+from one year to another.</p>
 <p><br />
 </p>
 <div id="site-1---name-indiana" class="section level1">
 <h1>Site 1 - NAME, Indiana</h1>
 <div id="select-a-field" class="section level2">
 <h2>Select a field</h2>
-<p>Start by investigating the eastern corn belt of the United States, a region where the majority of agriculture is currently rainfed. Begin by launching AquaPlan (‘Launch App’ button at the top-right of this page) and navigating to the ‘Value of Irrigation’ tab. Then, enter the following coordinates (COORD HERE) in the search box to select an example field in the vicinity of NAME in the state of Indiana as shown on the map below. AquaPlan will automatically retrieve weather data for the site from the Daymet gridded weather dataset produced by Oak Ridge National Laboratory in the United States along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).</p>
+<p>Start by investigating the eastern corn belt of the United States, a
+region where the majority of agriculture is currently rainfed. Begin by
+launching AquaPlan (‘Launch App’ button at the top-right of this page)
+and navigating to the ‘Value of Irrigation’ tab. Then, enter the
+following coordinates (COORD HERE) in the search box to select an
+example field in the vicinity of NAME in the state of Indiana as shown
+on the map below. AquaPlan will automatically retrieve weather data for
+the site from the Daymet gridded weather dataset produced by Oak Ridge
+National Laboratory in the United States along with soil properties from
+the global SoilGrids dataset produced by the International Soil
+Reference and Information Centre (ISRIC).</p>
 <!-- N.B. doesn't seem like expectations of low irri requirement are met in this region? -->
 <p><br />
 </p>
@@ -392,12 +413,24 @@ div.tocify {
 </div>
 <div id="setup-and-run-aquacrop" class="section level2">
 <h2>Setup and run AquaCrop</h2>
-<p>Select the ‘Run AquaCrop’ tab and browse through all of the model parameters that can be tweaked. Leave all parameters as their default values for now, but pay particular attention to the ‘Irrigation’ tab. This tab is where you adjust parameters of your irrigation system, including the application efficiency, maximum application rate or capacity of your irrigation system, and the levels of soil moisture (% of soil water holding capacity) at which irrigation will be triggered in each of the crop’s four main growth stages. Click the ‘Run model’ button to execute the model using the default set of parameters and geospatial weather and soil input data.</p>
+<p>Select the ‘Run AquaCrop’ tab and browse through all of the model
+parameters that can be tweaked. Leave all parameters as their default
+values for now, but pay particular attention to the ‘Irrigation’ tab.
+This tab is where you adjust parameters of your irrigation system,
+including the application efficiency, maximum application rate or
+capacity of your irrigation system, and the levels of soil moisture (%
+of soil water holding capacity) at which irrigation will be triggered in
+each of the crop’s four main growth stages. Click the ‘Run model’ button
+to execute the model using the default set of parameters and geospatial
+weather and soil input data.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question</strong></p>
-<p>How would you expect the yield and irrigation usage to change if you increased/decreased the SMT level at which irrigation is triggered? What about if you used higher/lower SMT values for specific crop growth stages?</p>
+<p>How would you expect the yield and irrigation usage to change if you
+increased/decreased the SMT level at which irrigation is triggered? What
+about if you used higher/lower SMT values for specific crop growth
+stages?</p>
 </div>
 <p><br />
 </p>
@@ -405,22 +438,31 @@ div.tocify {
 </div>
 <div id="visualise-and-interpret-outputs" class="section level2">
 <h2>Visualise and interpret outputs</h2>
-<p>Navigate to the ‘Visualize outputs’ tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Indiana. Using these plots, try to answer the following questions.</p>
+<p>Navigate to the ‘Visualize outputs’ tab, and use the checkboxes to
+explore the outputs of the AquaPlan simulations for the site in Indiana.
+Using these plots, try to answer the following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
-<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of rainfall and irrigation water use vary across the xx-year (xxxx) simulation period? Is the amount of irrigation generally greater or less than the amount of rainfall received by the crop?</p>
+<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of
+rainfall and irrigation water use vary across the xx-year (xxxx)
+simulation period? Is the amount of irrigation generally greater or less
+than the amount of rainfall received by the crop?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water productivity’ plots, do you think that rainfall in your selected site in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?</p>
+<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water
+productivity’ plots, do you think that rainfall in your selected site in
+the eastern corn belt is generally sufficient to meet the water
+requirements of maize in the majority of years?</p>
 </div>
 <p><br />
 </p>
-<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a screenshot of these three plots for later reference.</strong></p>
+<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a
+screenshot of these three plots for later reference.</strong></p>
 <p><br />
 </p>
 </div>
@@ -429,25 +471,43 @@ div.tocify {
 <h1>Site 2 - NAME, California</h1>
 <div id="select-a-field-and-re-run-aquacrop" class="section level2">
 <h2>Select a field and re-run AquaCrop</h2>
-<p>We’ll now run the model for a different location in the US. Return to the ‘Select region’ tab and select a field in the Central Valley of California near to the town of NAME by entering the following coordinates (COORD HERE) in the search box of the map as shown below. Note that the place marker for the first site will still be shown on the map, but the model will only use the last point created for simulations. When you return to the ‘Select region’ tab, your view will also be zoomed in very far, either scroll down or use the ‘-’ button on the map to zoom out.</p>
+<p>We’ll now run the model for a different location in the US. Return to
+the ‘Select region’ tab and select a field in the Central Valley of
+California near to the town of NAME by entering the following
+coordinates (COORD HERE) in the search box of the map as shown below.
+Note that the place marker for the first site will still be shown on the
+map, but the model will only use the last point created for simulations.
+When you return to the ‘Select region’ tab, your view will also be
+zoomed in very far, either scroll down or use the ‘-’ button on the map
+to zoom out.</p>
 <p><img src="imgs/tut_1_B.png" width="100%" /></p>
 <p> </p>
-<p>As in the first site, go to the ‘Run AquaCrop’ tab and run the model again for the newly selected field in California. Keep all of the parameters at the same default values.</p>
+<p>As in the first site, go to the ‘Run AquaCrop’ tab and run the model
+again for the newly selected field in California. Keep all of the
+parameters at the same default values.</p>
 <p><br />
 </p>
 </div>
 <div id="visualise-and-compare-outputs" class="section level2">
 <h2>Visualise and compare outputs</h2>
-<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the following questions.</p>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
+following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
-<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of rainfall and irrigation water use vary across the xx-year (xxxx) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first task?</p>
+<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of
+rainfall and irrigation water use vary across the xx-year (xxxx)
+simulation period? What differences do you notice between this plot and
+the plot from the eastern corn belt in the first task?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>Looking at the ‘rainfed vs irrigated yield’ plot, is rainfed maize production likely to be viable in this site in Central California and, if so, in which years? How does the difference between rainfed and irrigated yields compare to what you observed previously for the site in Indiana?</p>
+<p>Looking at the ‘rainfed vs irrigated yield’ plot, is rainfed maize
+production likely to be viable in this site in Central California and,
+if so, in which years? How does the difference between rainfed and
+irrigated yields compare to what you observed previously for the site in
+Indiana?</p>
 </div>
 <p><br />
 </p>
@@ -457,25 +517,39 @@ div.tocify {
 <h1>Site 3 - NAME, Nebraska</h1>
 <div id="select-field-and-re-run-model" class="section level2">
 <h2>Select field and re-run model</h2>
-<p>In the final part of this exercise, we will re-run AquaCrop to simulate maize yields and irrigation requirements for a third location - this time in NAME, Nebraska in the central United States. Enter the following coordinates (COORD HERE) into the search box and re-run the model again using the default parameters.</p>
+<p>In the final part of this exercise, we will re-run AquaCrop to
+simulate maize yields and irrigation requirements for a third location -
+this time in NAME, Nebraska in the central United States. Enter the
+following coordinates (COORD HERE) into the search box and re-run the
+model again using the default parameters.</p>
 <p><img src="imgs/tut_1_C.png" width="100%" /></p>
 <p><br />
 </p>
 </div>
 <div id="visualise-and-compare-outputs-1" class="section level2">
 <h2>Visualise and compare outputs</h2>
-<p>Use the outputs for the new simulation for the site in Nebraska, along with the screenshots you previously saved, to answer the following questions.</p>
+<p>Use the outputs for the new simulation for the site in Nebraska,
+along with the screenshots you previously saved, to answer the following
+questions.</p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
-<p>How does the amount and variability of rainfall differ in southwestern Nebraska compared to that of the site in central California and the site in Indiana the eastern corn belt?</p>
+<p>How does the amount and variability of rainfall differ in
+southwestern Nebraska compared to that of the site in central California
+and the site in Indiana the eastern corn belt?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.b.</strong></p>
-<p>How does the inter-annual variability in seasonal rainfall that you identified in the previous question affect the amount of irrigation that is used by the farmer and the yield benefits of irrigation? In which years are the benefits of irrigation highest and lowest?</p>
+<p>How does the inter-annual variability in seasonal rainfall that you
+identified in the previous question affect the amount of irrigation that
+is used by the farmer and the yield benefits of irrigation? In which
+years are the benefits of irrigation highest and lowest?</p>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.c.</strong></p>
-<p>Which years have the highest levels of irrigation water productivity? Can you use differences in rainfall and irrigation requirements to explain why the productivity of irrigation is greatest in those years?</p>
+<p>Which years have the highest levels of irrigation water productivity?
+Can you use differences in rainfall and irrigation requirements to
+explain why the productivity of irrigation is greatest in those
+years?</p>
 </div>
 </div>
 </div>
