@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \
 
-In this exercise, you will use the AquaPlan app to explore the value of irrigation for agricultural production, and how this value varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). In doing so, you will learn about the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing variability in yields in regions where rainfall varies substantially from one year to another. 
+Irrigation plays a critical role in enhancing agricultural productivity and supporting drought resilience. In this exercise, you will use the AquaPlan app to explore how the value and benefits derived from irrigation varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). You will demonstrate the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing drought risk exposure in agricultural production regions where rainfall levels vary substantially from one year to another. 
 
 \
 
