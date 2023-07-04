@@ -13,7 +13,7 @@
 
 <title>Assessing irrigation strategies</title>
 
-<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -374,119 +374,176 @@ div.tocify {
 </div>
 
 
-<p>Now you’ve got to grips with understanding how to the value of
-irrigation changes over different years and locations, we’re going to
-move on to how we can use the AquaCrop model to assess different levels
-of irrigation perform differently in a single location over time. Using
-this information, we can also find the optimum amount of irrigation to
-apply in a given location, but also understand how this can change based
-on the objectives of the farmer.</p>
+<p>Agriculture is the largest sectoral user of water globally.
+Identifying ways to use water productively and efficiently in
+agriculture is therefore crucial to support sustainable management of
+scarce water resources. In this exercise, you will use the AquaPlan app
+to explore how farmers can optimise irrigation management to maximise
+returns from limited available water resources focusing on an example of
+irrigation soybean production in Brazil. You will use AquaPlan to
+develop crop-water production functions that show how crop yields vary
+as a function of different levels of irrigation water use. Using this
+information, you will explore how AquaPlan can be used to identify
+optimum irrigation management rules for different objectives and
+constraints, and how best irrigation management practices vary across
+different climatic conditions.</p>
 <p><br />
 </p>
-<div id="step-1" class="section level1">
-<h1>Step 1</h1>
-<div id="select-region" class="section level2">
-<h2>Select region</h2>
-<p>For this workshop, all tasks will focus on soybean production in
-Brazil. Select a point within the highlighted region of the state of
-Mato Grosso (“great woods”) in central Brazil, where over a quarter of
-all Brazilian soybeans are produced:</p>
+<div id="step-1---develop-production-function" class="section level1">
+<h1>Step 1 - Develop production function</h1>
+<div id="select-site" class="section level2">
+<h2>Select site</h2>
+<p>For this exercise, all activities will focus on the same example case
+study - irrigaed soybean production in Mato Grosso (“great woods”) state
+in the Amazonian region of central Brazil. First, launch AquaPlan
+(‘Launch App’ button at the top-right of this page) and navigate to the
+‘Crop-water production function’ tab. Then, enter the following
+coordinates (COORD HERE) in the search box to select an example field in
+Mato Grosso state in Brazil as shown on the map below. AquaPlan will
+automatically retrieve weather information for the site from the NASA
+Power dataset along with soil properties from the global SoilGrids
+dataset produced by the International Soil Reference and Information
+Centre (ISRIC).</p>
 <p><img src="imgs/tut_3_A.png" width="100%" /></p>
 <p><br />
 </p>
 </div>
-<div id="run-aquacrop" class="section level2">
-<h2>Run AquaCrop</h2>
-<p>Set the crop to Soybean, change the fixed production cost to $50 and
-run the model.</p>
+<div id="setup-and-run-aquacrop" class="section level2">
+<h2>Setup and run AquaCrop</h2>
+<p>Select the ‘Run AquaCrop’ tab and browse through all of the model
+parameters that can be tweaked. First, set the crop type to Soybean.
+Then select the ‘Economic’ tab, and change the values of crop price,
+water cost, and production cost to $400 per tonne, $0.5 per ha-mm, and
+$700 per ha respectively. Leave all parameters at their default values,
+but note the different options that can be changed under the
+‘Irrigation’ tab. This includes XXX.</p>
 <p><br />
 </p>
 </div>
 <div id="interpret-outputs" class="section level2">
 <h2>Interpret outputs</h2>
-<p>Consider the Yield-Irrigation relationship graph to answer the
-following questions:</p>
+<p>Navigate to the ‘Visualize outputs’ tab, and use the checkboxes to
+explore the outputs of the AquaPlan simulations for the site in Mato
+Grosso. Using the Yield-Irrigation figure and data, answer the following
+questions:</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
 <p>Does the same amount of irrigation result in the same amount of yield
-each year? Use what you know about crop water requirements and climate
+each year? Use your knowledge about crop water requirements and climate
 variability to explain your answer.</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Irrigation is generally seen as a good thing for increasing crop
-yield, does higher irrigation always result in higher yield? For
-instance, does an increase of 100 mm irrigation always result in the
-same amount of yield increase? Explain your answers using information
-from the graph.</p>
+<p>Irrigation is generally seen as a way to increase crop yields. Does
+higher irrigation always result in higher yield? For instance, does an
+increase of 100 mm irrigation always result in the same amount of yield
+increase? Explain your answers using information from the graph.</p>
 </div>
 <p><br />
 </p>
 </div>
 </div>
-<div id="step-2" class="section level1">
-<h1>Step 2</h1>
-<p>We can use the crop-water production function graphs to identify an
-optimal irrigation amount. The definition of ‘optimal’ varies depending
-on the objective of the farmer.</p>
+<div id="step-2---identify-optimal-management-practices"
+class="section level1">
+<h1>Step 2 - Identify optimal management practices</h1>
+<p>One of the main uses of crop-water production functions is to assess
+the value of different alternative irrigation management decisions that
+can be made by a farmer. For example, crop-water production functions
+can be used to determine the optimal amount of irrigation water use -
+and associated management rules - for a given farmer and production
+system. In this case, the definition of ‘optimal’ will also vary
+depending on the objective of the farmer, for example when comparing
+goals of optimising profits or yields from irrigation water inputs.
+Using the outputs for the site in Mato Grosso, complete the following
+questions to explore how the crop-water production simulated by AquaPlan
+can be used to guide and inform efficient use of water by farmers.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
 <p>Imagine a farmer wants to select the irrigation amount that maximises
-yield. Using the mean over all years, what irrigation amount would this
-be?</p>
+yield. Using the average production function over all years, what
+irrigation amount would this be? What is associated irrigation strategy
+(i.e. soil moisture target)?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>The AquaCrop model takes into account the cost of water, the value of
-crop yield and fixed production costs from farm management. Now identify
-the level of irrigation that the farmer would pick in order to maximise
-profit using the mean over all years. Is this irrigation amount higher
-or lower than the amount that maximises yield, and why might that
+<p>Maximising economic returns to water is also an important goal for
+many farmers and water managers. Given the specified cost of water, crop
+price and fixed production costs for your soybean case study, what would
+be the level of irrigation that the farmer should pick in order to
+maximise profits (averaged over all years)?. Is this irrigation amount
+higher or lower than the amount that maximises yield, and why might that
 be?</p>
 </div>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.c.</strong></p>
-<p>Do the functions of each year follow the same shape as the mean
-production function? Why might there not be a clear optimum amount of
-irrigation in some years? (i.e. why don’t you see a peak followed by
-decline in profit?)</p>
+<p>How do profit and yield maximising levels of water use compare to
+those that maximise water productivity (i.e. yield per mm of
+irrigation)? What does this suggest about the relationship between goals
+of maximising water productivity (i.e. ‘more crop per drop’) and
+farm-level economic or productivity goals?</p>
 </div>
 <p><br />
 </p>
 </div>
-<div id="step-3" class="section level1">
-<h1>Step 3</h1>
-<p>Check the box next to ‘All stats’ on the ‘visualize outputs’ tab.
-Find the year with the lowest rainfall amount (you can click the headers
-of the table to sort by columns). Now go back to the ‘Run AquaCrop’ tab
-and change the ‘Sim Years’ tab so that only your drought year is
-simulated by the model, e.g. 2000:</p>
-<p><img src="imgs/tut_3_B.png" width="100%" /></p>
+<div id="step-3---assess-effects-of-climate-variability"
+class="section level1">
+<h1>Step 3 - Assess effects of climate variability</h1>
+<p>As highlighted in Exercise 1, in many parts of the world irrigation
+is used to supplement rainfall. Irrigation requirements therefore vary
+from one year to another depending on growing season weather conditions,
+which may affect a farmer’s optimal irrigation management rules and
+choices. Using the simulated outputs for the Mato Grosso site, answer
+the following questions:</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
-<p>How and why does the drought year have a different economically
-optimal amount of irrigation?</p>
+<p>Do the crop-water production functions for each individual year (grey
+lines) follow the same shape as the mean production function (black
+line)? Why might the shape of production function (in terms of yield)
+differ from one year to another?</p>
 </div>
+<p><br />
+</p>
+<p>To explore the effects of year to year climate variability in more
+detail, check the box next to ‘All stats’ on the ‘Visualize outputs’
+tab. Find the year with the lowest rainfall amount (you can click the
+headers of the table to sort by columns). Now go back to the ‘Run
+AquaCrop’ tab and change the ‘Sim Years’ tab so that only this low
+rainfall year is simulated by the model. Re-run the model within the
+app.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 3.b.</strong></p>
-<p>Go back to the ‘Run AquaCrop’ tab and change the cost of water $1.20
-to simulate high demand and low availability in a drought year. How does
-this price change affect the overall profits and the optimal amount of
-irrigation?</p>
+<p>Which year has the lowest rainfall during the growing season? How and
+why does the economically optimal level of irrigation water use differ
+in this year compared to the average over all years?</p>
+</div>
+<p><br />
+</p>
+<p>Return to the ‘Run AquaCrop’ tab and change the cost of water $1.00
+per ha-mm to simulate a scenario where there is both high demand and low
+availability of water in a drought year leading to an increase in water
+prices</p>
+<p><br />
+</p>
+<div class="whitebox question">
+<p><strong>Question 3.c.</strong></p>
+<p>How does this change in water price affect the overall profits and
+the optimal amount of irrigation? What would be the impact if crop
+prices were also increased by the same proportion (i.e. by 100% from
+$400 per tonne to $800 per tonne)?</p>
 </div>
 </div>
 
