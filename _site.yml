@@ -12,16 +12,10 @@ navbar:
       menu:
       - text: "Exercise 1: Assessing the value of irrigation"
         href: value_of_irri.html
-      - text: "Exercise 2: Agriculture's water footprint"
-        href: water_footprint.html
-      - text: "Exercise 3: Identifying best water management practices"
+      - text: "Exercise 2: Identifying best water management practices"
         href: production_function.html
-      - text: "Exercise 4: Impact of crop-water functions"
-        href: function_impact.html
-      - text: "Exercise 5: Evaluating impacts of climate change"
+      - text: "Exercise 3: Evaluating impacts of climate change"
         href: cc_impacts.html
-    - text: "About"
-      href: about.html
     - text: 'FAQ'
       href: faq.html
     - text: ' Launch App'
