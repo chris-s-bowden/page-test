@@ -52,13 +52,13 @@ Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the o
 Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? Is the amount of irrigation generally greater or less than the amount of rainfall received by the crop?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block1" class="collapse">  
   
   Irrigation is generally less than the rainfall received by the crop. However, in years with particularly low rainfall, a greater amount of irrigation is used to meet maize's water demands.
     
-    ```{r echo=FALSE, out.width='100%'}
+  ```{r echo=FALSE, out.width='100%'}
   knitr::include_graphics('imgs/tut_1_B.png')
-    ```
+  ```
   
   </div>
 
@@ -72,13 +72,13 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
 Now looking at the 'rainfed vs irrigated yield' and 'irrigation water productivity' plots, do you think that rainfall in your selected site in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block2" class="collapse">  
   
   Generally, rainfall is sufficient for maize's water demands in Richmond, Indiana. This can be seen by the similar levels of yield for rainfed and irrigated maize in most years. Also, yields remain relatively stable due to consistent rainfall each year. The spikes in irrigation water productivity represent occassional low rainfall years (e.g. 1999), where irrigation was required to meet maize's water demands. 
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_C.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_C.png')
+  ```
   
   </div>
 
@@ -119,13 +119,13 @@ Use the checkboxes on the 'Visualize outputs' tab to answer the following questi
 Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first task?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block3" class="collapse">  
   
   There is far greater irrigation than rainfall for every year, due to the extremely low rainfall of central California. This represents the opposite rainfall scenario to the plot from the eastern corn belt.
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_E.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_E.png')
+  ```
   
   </div>
 
@@ -138,15 +138,15 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
 Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production likely to be viable in this site in Central California and, if so, in which years? How does the difference between rainfed and irrigated yields compare to what you observed previously for the site in Indiana?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block4" class="collapse">  
   
   Rainfed maize production is inviable across all 30 years simulated here, with yield never exceeding 2 t/ha compared to irrigated yield consistently exceeding 14 t/ha. This represents a huge difference between rainfed and irrigated yields, a stark contrast to the Indiana site where irrigation resulted in little to no increase in yield. 
   
   The stability of yields in California are high due to the consistent use of irrigation. The stability of yields in Indiana are similarly high, but are instead due to consistent rainfall.
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_F.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_F.png')
+  ```
   
   </div>
 
@@ -175,13 +175,13 @@ Use the outputs for the new simulation for the site in Nebraska, along with the 
 How does the amount and variability of rainfall differ in southwestern Nebraska compared to that of the site in central California and the site in Indiana the eastern corn belt?   
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block5" class="collapse">  
   
   Whereas the sites in California (dry) and Indiana (wet) represented extreme annual rainfall patterns, the rainfall at the Nebraska site shows greater inter-annual variation, i.e. some years receive similar levels of rainfall to Indiana, but some years receive very little rainfall.
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_H.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_H.png')
+  ```
   
   </div>
 
@@ -195,13 +195,13 @@ How does the amount and variability of rainfall differ in southwestern Nebraska 
 How does the inter-annual variability in seasonal rainfall that you identified in the previous question affect the amount of irrigation that is used by the farmer and the yield benefits of irrigation? In which years are the benefits of irrigation highest and lowest? 
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block6" class="collapse">  
   
   Years with lower rainfall require the farmer to use a greater amount of irrigation to meet maize's water demands (e.g. 2012 and 2013). In low rainfall years there is a deficit in the water requirements of maize. Thus, the yield benefits of irrigation are higher in low rainfall years. Irrigation benefit is highest in 2017 (one of lowest rainfall years, white arrows) and lowest in 1996 (highest rainfall year, yellow arrows).
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_I.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_I.png')
+  ```
   
   </div>
 
@@ -215,13 +215,13 @@ How does the inter-annual variability in seasonal rainfall that you identified i
 Which years have the highest levels of irrigation water productivity? Can you use differences in rainfall and irrigation requirements to explain why the productivity of irrigation is greatest in those years?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
-  <div id="BlockName" class="collapse">  
+  <div id="Block7" class="collapse">  
   
   Irrigation water productivity was highest in 2017 (white arrows) and 2020 (yellow arrows). These years are both amongst the lowest rainfall years of the 30-year period, as shown by the top plot. Specifically, rainfed maize was inviable in both of these years, as shown by the middle plot. The inviability of rainfed maize means that there is the greatest difference between rainfed and irrigated yields for 2017 and 2022. Thus, the productivity of irrigation is greatest in these years.
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_J.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_1_J.png')
+  ```
   
   </div>
 
