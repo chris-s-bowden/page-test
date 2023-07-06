@@ -32,9 +32,9 @@ Cover basics to give context to the multiple future scenarios they're working wi
 <button class="btn btn-primary" data-toggle="collapse" data-target="#BlockName"> Show/Hide Example </button>  
   <div id="BlockName" class="collapse">  
     
-    ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_3_A.png')
-    ```
+      ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_A.png')
+      ```
   
   </div>
 

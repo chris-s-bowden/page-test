@@ -56,9 +56,9 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
   
   Irrigation is generally less than the rainfall received by the crop. However, in years with particularly low rainfall, a greater amount of irrigation is used to meet maize's water demands.
     
-```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_B.png')
-```
+      ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_B.png')
+      ```
   
   </div>
 
@@ -71,7 +71,7 @@ knitr::include_graphics('imgs/tut_1_B.png')
 
 Now looking at the 'rainfed vs irrigated yield' and 'irrigation water productivity' plots, do you think that rainfall in your selected site in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Show/Hide Example </button>  
+<button class="btn btn-primary2" data-toggle="collapse" data-target="#Block2"> Show/Hide Example </button>  
   <div id="Block2" class="collapse">  
   
   Generally, rainfall is sufficient for maize's water demands in Richmond, Indiana. This can be seen by the similar levels of yield for rainfed and irrigated maize in most years. Also, yields remain relatively stable due to consistent rainfall each year. The spikes in irrigation water productivity represent occassional low rainfall years (e.g. 1999), where irrigation was required to meet maize's water demands. 
@@ -118,7 +118,7 @@ Use the checkboxes on the 'Visualize outputs' tab to answer the following questi
 
 Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first task?
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
+<button class="btn btn-primary3" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
   <div id="Block3" class="collapse">  
   
   There is far greater irrigation than rainfall for every year, due to the extremely low rainfall of central California. This represents the opposite rainfall scenario to the plot from the eastern corn belt.
@@ -219,9 +219,9 @@ Which years have the highest levels of irrigation water productivity? Can you us
   
   Irrigation water productivity was highest in 2017 (white arrows) and 2020 (yellow arrows). These years are both amongst the lowest rainfall years of the 30-year period, as shown by the top plot. Specifically, rainfed maize was inviable in both of these years, as shown by the middle plot. The inviability of rainfed maize means that there is the greatest difference between rainfed and irrigated yields for 2017 and 2022. Thus, the productivity of irrigation is greatest in these years.
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_J.png')
-  ```
+      ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_1_J.png')
+      ```
   
   </div>
 
