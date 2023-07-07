@@ -385,17 +385,17 @@ different climatic conditions.</p>
 <div id="select-site" class="section level2">
 <h2>Select site</h2>
 <p>For this exercise, all activities will focus on the same example case
-study - irrigaed soybean production in Mato Grosso (“great woods”) state
-in the Amazonian region of central Brazil. First, launch AquaPlan
+study - irrigated soybean production in Mato Grosso (“great woods”)
+state in the Amazonian region of central Brazil. First, launch AquaPlan
 (‘Launch App’ button at the top-right of this page) and navigate to the
 ‘Crop-water production function’ tab. Then, enter the following
-coordinates (COORD HERE) in the search box to select an example field in
-Mato Grosso state in Brazil as shown on the map below. AquaPlan will
-automatically retrieve weather information for the site from the NASA
-Power dataset along with soil properties from the global SoilGrids
-dataset produced by the International Soil Reference and Information
-Centre (ISRIC).</p>
-<p><img src="imgs/tut_3_A.png" width="100%" /></p>
+coordinates (-13.249141, -57.983966) in the search box to select an
+example field in Mato Grosso state in Brazil as shown on the map below.
+AquaPlan will automatically retrieve weather information for the site
+from the NASA Power dataset along with soil properties from the global
+SoilGrids dataset produced by the International Soil Reference and
+Information Centre (ISRIC).</p>
+<p><img src="imgs/tut_2_A.png" width="100%" /></p>
 <p><br />
 </p>
 </div>
@@ -403,11 +403,12 @@ Centre (ISRIC).</p>
 <h2>Setup and run AquaCrop</h2>
 <p>Select the ‘Run AquaCrop’ tab and browse through all of the model
 parameters that can be tweaked. First, set the crop type to Soybean.
-Then select the ‘Economic’ tab, and change the values of crop price,
+Then select the ‘Economics’ tab, and change the values of crop price,
 water cost, and production cost to $400 per tonne, $0.5 per ha-mm, and
-$700 per ha respectively. Leave all parameters at their default values,
-but note the different options that can be changed under the
-‘Irrigation’ tab. This includes XXX.</p>
+$700 per ha respectively. Leave all other parameters at their default
+values, but note the different options that can be changed under the
+‘Irrigation’ tab. This includes XXX (the soil moisture target minimum,
+maximum and steps that we will look at later ???).</p>
 <p><br />
 </p>
 </div>
@@ -424,6 +425,18 @@ questions:</p>
 <p>Does the same amount of irrigation result in the same amount of yield
 each year? Use your knowledge about crop water requirements and climate
 variability to explain your answer.</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block1">
+Show/Hide Example
+</button>
+<div id="Block1" class="collapse">
+<p>The same amount of irrigation (e.g. 350 mm, red line) results in a
+wide range of yields each year (2.0 to 4.3 t/ha, blue lines). The
+rainfall in Mato Grosso varies each year. The water requirements of the
+soybeans are supplied by a combination of rainfall and irrigation. Thus,
+as rainfall varies, the same amount of irrigation will exceed or fail to
+meet soybean water requirements depending on the year.</p>
+<p><img src="imgs/tut_2_B.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
@@ -433,6 +446,18 @@ variability to explain your answer.</p>
 higher irrigation always result in higher yield? For instance, does an
 increase of 100 mm irrigation always result in the same amount of yield
 increase? Explain your answers using information from the graph.</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block2">
+Show/Hide Example
+</button>
+<div id="Block2" class="collapse">
+<p>Irrigation helps the farmer to meet the crop’s water requirement.
+However, if the local rainfall is sufficient for meeting the crop’s
+requirement, then irrigation will have no additional benefit to yield.
+This can be seen as irrigation increases from 400 mm to 500 mm below:
+some years have a flat response (no yield change) whereas others have a
+steep gradient (large yield increase).</p>
+<p><img src="imgs/tut_2_C.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
@@ -460,6 +485,15 @@ can be used to guide and inform efficient use of water by farmers.</p>
 yield. Using the average production function over all years, what
 irrigation amount would this be? What is associated irrigation strategy
 (i.e. soil moisture target)?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3">
+Show/Hide Example
+</button>
+<div id="Block3" class="collapse">
+<p>Based on the average over all years, the optimum irrigation amount to
+maximise yield would be 620 mm. This is associated with a soil moisture
+target (SMT) of 70 %.</p>
+<p><img src="imgs/tut_2_D.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
@@ -472,6 +506,18 @@ be the level of irrigation that the farmer should pick in order to
 maximise profits (averaged over all years)?. Is this irrigation amount
 higher or lower than the amount that maximises yield, and why might that
 be?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block4">
+Show/Hide Example
+</button>
+<div id="Block4" class="collapse">
+<p>Seasonal irrigation of 550 mm is the optimum value to maximise
+profits (with 55 % SMT). This is lower than the amount that maximises
+yield. This is because greater amounts of irrigation have increased
+cost, and when the increase in irrigation cost does not provide an
+equivalent increase in profit from yield increases, overall
+profitability decreases.</p>
+<p><img src="imgs/tut_2_E.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
@@ -482,6 +528,16 @@ those that maximise water productivity (i.e. yield per mm of
 irrigation)? What does this suggest about the relationship between goals
 of maximising water productivity (i.e. ‘more crop per drop’) and
 farm-level economic or productivity goals?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block5">
+Show/Hide Example
+</button>
+<div id="Block5" class="collapse">
+<!-- Not sure why Water productivity graphs don't represent the gradient of yield/irri graphs,
+would assume that section of steepest gradient represents highest water productivity -->
+<!--   ```{r echo=FALSE, out.width='100%'} -->
+<!-- knitr::include_graphics('imgs/tut_2_F.png') -->
+<!--   ``` -->
+</div>
 </div>
 <p><br />
 </p>
@@ -500,17 +556,32 @@ the following questions:</p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
 <p>Do the crop-water production functions for each individual year (grey
-lines) follow the same shape as the mean production function (black
+lines) follow the same shape as the mean production function (blue
 line)? Why might the shape of production function (in terms of yield)
 differ from one year to another?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block6">
+Show/Hide Example
+</button>
+<div id="Block6" class="collapse">
+<p>Broadly, each year follows the same general trend of the mean
+production function - a sinusoidal shape ending at an asymptote.
+However, the shape does vary, as highlighted by the years highlighted in
+red and black below. For instance, the red line highlights a year in
+which greater irrigation (up to 200 mm) resulted in linearly greater
+yield. This represents the variability of rainfall in contributing to
+crop water demand each year, where an equivalent increase in irrigation
+will have different impacts depending on current amount of
+irrigation.</p>
+<p><img src="imgs/tut_2_G.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
 <p>To explore the effects of year to year climate variability in more
-detail, check the box next to ‘All stats’ on the ‘Visualize outputs’
-tab. Find the year with the lowest rainfall amount (you can click the
-headers of the table to sort by columns). Now go back to the ‘Run
-AquaCrop’ tab and change the ‘Sim Years’ tab so that only this low
+detail, check the box next to ‘Aggregated stats’ on the ‘Visualize
+outputs’ tab. Find the year with the lowest rainfall amount (you can
+click the headers of the table to sort by columns). Now go back to the
+‘Run AquaCrop’ tab and change the ‘Sim Years’ tab so that only this low
 rainfall year is simulated by the model. Re-run the model within the
 app.</p>
 <p><br />
@@ -520,6 +591,21 @@ app.</p>
 <p>Which year has the lowest rainfall during the growing season? How and
 why does the economically optimal level of irrigation water use differ
 in this year compared to the average over all years?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7">
+Show/Hide Example
+</button>
+<div id="Block7" class="collapse">
+<p>Here, 2011 has the lowest rainfall. The economically optimal level of
+irrigation is now around 620 mm, higher than the 550 mm average we found
+earlier. This is because the amount of irrigation required to meet the
+crop’s water requirements is much greater in a low rainfall year.
+Therefore, more irrigation is required to generate the same level of
+yield. So although overall profitability will be lower in low rainfall
+years (due to increased irrigation use), the economically optimum amount
+of irrigation is higher because it is required to generate sufficient
+yield.</p>
+<p><img src="imgs/tut_2_H.png" width="100%" /></p>
+</div>
 </div>
 <p><br />
 </p>
@@ -535,6 +621,17 @@ prices</p>
 the optimal amount of irrigation? What would be the impact if crop
 prices were also increased by the same proportion (i.e. by 100% from
 $400 per tonne to $800 per tonne)?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8">
+Show/Hide Example
+</button>
+<div id="Block8" class="collapse">
+<p>Increasing the water price does not affect economically optimal
+amount of irrigation, but does decrease overall profits and increases
+the penalty for irrigating beyond an optimal amount.</p>
+<p>Doubling the crop prices more than quadruples the overall profit from
+an optimum irrigation amount.</p>
+<p><img src="imgs/tut_2_I.png" width="100%" /></p>
+</div>
 </div>
 </div>
 
