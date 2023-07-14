@@ -72,9 +72,9 @@ a:hover {
   color: black;
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
-  border: 8px solid #fbcd24;
+  border: 8px solid #375A7F;
   border-radius: 10px;
-  background: #f5f5f5 5px center/3em no-repeat; /* #1E90FF */
+  background: #white 5px center/3em no-repeat; /* #1E90FF */
 }
 .info {
   background-image: url("imgs/info.jpg");

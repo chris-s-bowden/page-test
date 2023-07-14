@@ -99,7 +99,7 @@ We'll now run the model for a different location in the US. Return to the 'Selec
 <!-- Map disappears when switching tabs, can't find a solution to this apart from refreshing page, not sure what function is responsible for the map disappearing -->
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_D.png')
+  knitr::include_graphics('imgs/tut_1_D.png')
 ```
 
 \ 
@@ -123,9 +123,9 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
   
   There is far greater irrigation than rainfall for every year, due to the extremely low rainfall of central California. This represents the opposite rainfall scenario to the plot from the eastern corn belt.
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_E.png')
-  ```
+    ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_E.png')
+    ```
   
   </div>
 
@@ -144,9 +144,9 @@ Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production li
   
   The stability of yields in California are high due to the consistent use of irrigation. The stability of yields in Indiana are similarly high, but are instead due to consistent rainfall.
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_F.png')
-  ```
+    ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_F.png')
+    ```
   
   </div>
 
@@ -160,7 +160,7 @@ knitr::include_graphics('imgs/tut_1_F.png')
 In the final part of this exercise, we will re-run AquaCrop to simulate maize yields and irrigation requirements for a third location - this time in Imperial, Nebraska in the central United States. Enter the following coordinates (40.499672, -101.686346) into the search box and re-run the model again using the default parameters. 
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_G.png')
+  knitr::include_graphics('imgs/tut_1_G.png')
 ```
 
 \
@@ -179,9 +179,9 @@ How does the amount and variability of rainfall differ in southwestern Nebraska 
   
   Whereas the sites in California (dry) and Indiana (wet) represented extreme annual rainfall patterns, the rainfall at the Nebraska site shows greater inter-annual variation, i.e. some years receive similar levels of rainfall to Indiana, but some years receive very little rainfall.
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_H.png')
-  ```
+    ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_H.png')
+    ```
   
   </div>
 
@@ -199,9 +199,9 @@ How does the inter-annual variability in seasonal rainfall that you identified i
   
   Years with lower rainfall require the farmer to use a greater amount of irrigation to meet maize's water demands (e.g. 2012 and 2013). In low rainfall years there is a deficit in the water requirements of maize. Thus, the yield benefits of irrigation are higher in low rainfall years. Irrigation benefit is highest in 2017 (one of lowest rainfall years, white arrows) and lowest in 1996 (highest rainfall year, yellow arrows).
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_I.png')
-  ```
+    ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_I.png')
+    ```
   
   </div>
 
@@ -219,9 +219,9 @@ Which years have the highest levels of irrigation water productivity? Can you us
   
   Irrigation water productivity was highest in 2017 (white arrows) and 2020 (yellow arrows). These years are both amongst the lowest rainfall years of the 30-year period, as shown by the top plot. Specifically, rainfed maize was inviable in both of these years, as shown by the middle plot. The inviability of rainfed maize means that there is the greatest difference between rainfed and irrigated yields for 2017 and 2022. Thus, the productivity of irrigation is greatest in these years.
     
-  ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_J.png')
-  ```
+    ```{r echo=FALSE, out.width='100%'}
+      knitr::include_graphics('imgs/tut_1_J.png')
+    ```
   
   </div>
 
