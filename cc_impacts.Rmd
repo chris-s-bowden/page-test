@@ -29,12 +29,10 @@ Let's begin to explore our future climate projection data - head to the 'Explore
 :::: {.infobox .info data-latex="{info}"}
 **Shared Socioeconomic Pathways (SSPs) and Representative Concentration Pathways (RCPs)**
 
-Cover basics to give context to the multiple future scenarios they're working with.
-
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1"> Show/Hide Info </button>  
   <div id="Block1" class="collapse">  
     
-  The direction of future economic, industrial and environmental progress is uncertain. For us to produce reasonable projections of future climate impacts, it is important to identify this uncertainty by constructing a range of possible future scenarios. In the past, Representative Concentration Pathways (RCPs) were used as the only determinant of future uncertainty, providing trajectories of the atmospheric concentration of carbon dioxide under different future development scenarios. For example, RCP8.5 represents a high-emissions scenario where the total incoming and trapped solar radiation reaches 8.5 W/m$$^2$$ by 2100. More recently, this concept has been combined with Shared Socioeconomic Pathways (SSPs) to better quantify variations caused by additional global changes such as national population, urbanisation and GDP per capita. See the chart below for a summary of the different SSP scenarios.
+  The direction of future economic, industrial and environmental progress is uncertain. For us to produce reasonable projections of future climate impacts, it is important to identify this uncertainty by constructing a range of possible future scenarios. In the past, Representative Concentration Pathways (RCPs) were used as the only determinant of future uncertainty, providing trajectories of the atmospheric concentration of carbon dioxide under different future development scenarios. For example, RCP8.5 represents a high-emissions scenario where the total incoming and trapped solar radiation reaches 8.5 W/m^2^ by 2100. More recently, this concept has been combined with Shared Socioeconomic Pathways (SSPs) to better quantify variations caused by additional global changes such as national population, urbanisation and GDP per capita. See the chart below for a summary of the different SSP scenarios.
   
   ```{r echo=FALSE, out.width='100%'}
     knitr::include_graphics('imgs/tut_3_B.png')
