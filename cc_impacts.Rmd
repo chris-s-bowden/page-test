@@ -36,9 +36,9 @@ Cover basics to give context to the multiple future scenarios they're working wi
     
   The direction of future economic, industrial and environmental progress is uncertain. For us to produce reasonable projections of future climate impacts, it is important to identify this uncertainty by constructing a range of possible future scenarios. In the past, Representative Concentration Pathways (RCPs) were used as the only determinant of future uncertainty, providing trajectories of the atmospheric concentration of carbon dioxide under different future development scenarios. For example, RCP8.5 represents a high-emissions scenario where the total incoming and trapped solar radiation reaches 8.5 W/m$$^2$$ by 2100. More recently, this concept has been combined with Shared Socioeconomic Pathways (SSPs) to better quantify variations caused by additional global changes such as national population, urbanisation and GDP per capita. See the chart below for a summary of the different SSP scenarios.
   
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_B.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_B.png')
+  ```
   
   RCPs and SSPs are now combined, to represent different levels of carbon dioxide concentration achieved through each socioeconomic scenario. For example, SSP245 represents the SSP2 socioeconomic scenario, leading to RCP4.5, overall representing a middle-ground future scenario. Conversely, SSP585 represents fossil-fueled development leading to RCP8.5, representing an extremely high emissions scenario.
 
@@ -62,9 +62,9 @@ Across all three models, how is precipitation in Woolpit generally projected to 
   
   Broadly, precipitation is projected to increase over autumn and winter months (Nov - Jan) and reduce over summer months (Jun/Jul/Aug). The direction of these changes remains constant between SSPs, but the magnitude of changes increases from SSP245 to SSP585. This is because SSP585 represents a higher-emissions scenario where a greater degree of warming will cause more extreme shifts in climate. 
     
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_C.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_C.png')
+  ```
   
   </div>
 
@@ -80,15 +80,15 @@ How do minimum and maximum temperatures change over time across the three models
   
   In general, temperatures are projected to increase over time across all three models, and is more pronounced under SSP585 than SSP245.
     
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_D.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_D.png')
+  ```
     
    Models MIROC6 and NorESM2-LM2 project much smaller increases in temperature over time than CanESM5. It would therefore not be appropriate to use a single model of these three, but instead use an ensemble measure, such as mean or median for each projected data point. The difference between the models' projections is highlighted in the zoomed view below:
    
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_E.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_E.png')
+  ```
    
   
   </div>
@@ -113,9 +113,9 @@ Describe the historical and projected future trends of rainfed potato yields acr
   
   Overall, there is a significant degree of inter-annual variability across all models and scenarios, making it difficult to identify any long-term increase or decrease in rainfed yield. Conversely, irrigated yields have extremely low inter-annual variability. Although such stable and reliable yields are unrealistic, they represent the twofold benefit of irrigation. Irrigated crops typically have their water requirements met throughout the growing season and can use additional water to protect against heat stress. Thus, irrigated yields are typically less variable and higher on average than rainfed yields.
     
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_F.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_F.png')
+  ```
   
   </div>
 
@@ -131,9 +131,9 @@ In the 'Scenario time series' panel, isolate the rainfed yields under SSP245. Im
   
   In general, it's useful to use the median value from a model ensemble because the median represents a model-predicted value whereas the mean is not directly produced by any single model. Specifically, this rainfed plot shows a large range of inter-annual variation that is often not *in phase* between models. If we were to use the mean of each year, then it is likely that a large degree of this inter-annual variation would be removed through averaging. Thus, to create a representative average of these three models, selecting the 'middle' model value for each year would be best - because it both represents a real model output, and retains more variability than the mean.
     
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_G.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+    knitr::include_graphics('imgs/tut_3_G.png')
+  ```
   
   </div>
 
@@ -149,9 +149,9 @@ Using the 'Scenario time series', what do you notice about the projected irrigat
   
   We saw earlier that SSP585 has a greater magnitude of changes in precipitation and greater increases in both minimum and maximum temperatures. You could reasonably expect increases in heat stress and irrigation water requirements to reduce irrigated yields. However, we can see clearly in the plot below that irrigated yield is projected to have a greater increase under SSP585 than SSP245. Specifically, this is likely caused by the increasing temperatures benefitting crop growth. Crop yield can benefit from higher temperatures when there is sufficient crop water availability from irrigation. The crop can use evapotranspiration to maintain safe leaf temperatures whilst maximising growth and therefore yield.
     
-    ```{r echo=FALSE, out.width='100%'}
-      knitr::include_graphics('imgs/tut_3_H.png')
-    ```
+  ```{r echo=FALSE, out.width='100%'}
+  knitr::include_graphics('imgs/tut_3_H.png')
+  ```
   
   </div>
 
