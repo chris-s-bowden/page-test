@@ -95,7 +95,7 @@ How do minimum and maximum temperatures change over time across the three models
 
 \
 
-# Step 2 - Future climate impacts
+# Step 2 - Future climate impacts, yields
 
 Now that we've explored the climate projections for Woolpit, it's time to assess how they impact future potato yield. Go to the 'Run AquaCrop' tab and leave all settings at their defaults. Due to the large number of models, you will have to scroll down quite far to press the 'Run model' button. The models should take no longer than a minute or two to complete.
 
@@ -148,10 +148,52 @@ Using the 'Scenario time series', what do you notice about the projected irrigat
   We saw earlier that SSP585 has a greater magnitude of changes in precipitation and greater increases in both minimum and maximum temperatures. You could reasonably expect increases in heat stress and irrigation water requirements to reduce irrigated yields. However, we can see clearly in the plot below that irrigated yield is projected to have a greater increase under SSP585 than SSP245. Specifically, this is likely caused by the increasing temperatures benefitting crop growth. Crop yield can benefit from higher temperatures when there is sufficient crop water availability from irrigation. The crop can use evapotranspiration to maintain safe leaf temperatures whilst maximising growth and therefore yield.
     
   ```{r echo=FALSE, out.width='100%'}
+  knitr::include_graphics('imgs/tut_3_G.png')
+  ```
+  
+  </div>
+
+::::
+
+
+# Step 3 - Future climate impacts, water use
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.a.**
+
+XXXXX
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Show/Hide Example </button>  
+  <div id="Block7" class="collapse">  
+  
+  XXXXX
+    
+  ```{r echo=FALSE, out.width='100%'}
   knitr::include_graphics('imgs/tut_3_H.png')
   ```
   
   </div>
 
 ::::
-<!-- By looking at the boxplot alone, you may think that SSP585 irrigated yield has a greater degree of inter-annual variability than SSP245. However, this is a representation of a greater increase in yield for SSP585 than SSP245 over a long time period (2020-2099).  -->
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 3.a.**
+
+XXXXX
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Show/Hide Example </button>  
+  <div id="Block8" class="collapse">  
+  
+  XXXXX
+    
+  ```{r echo=FALSE, out.width='100%'}
+  knitr::include_graphics('imgs/tut_3_I.png')
+  ```
+  
+  </div>
+
+::::
+
+
+
+
