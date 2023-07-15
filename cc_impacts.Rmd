@@ -130,7 +130,7 @@ In the 'Scenario time series' panel, isolate the rainfed yields under SSP245. Im
   In general, it's useful to use the median value from a model ensemble because the median represents a model-predicted value whereas the mean is not directly produced by any single model. Specifically, this rainfed plot shows a large range of inter-annual variation that is often not *in phase* between models. If we were to use the mean of each year, then it is likely that a large degree of this inter-annual variation would be removed through averaging. Thus, to create a representative average of these three models, selecting the 'middle' model value for each year would be best - because it both represents a real model output, and retains more variability than the mean.
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_3_G.png')
+    knitr::include_graphics('imgs/tut_3_F.png')
   ```
   
   </div>
@@ -148,7 +148,7 @@ Using the 'Scenario time series', what do you notice about the projected irrigat
   We saw earlier that SSP585 has a greater magnitude of changes in precipitation and greater increases in both minimum and maximum temperatures. You could reasonably expect increases in heat stress and irrigation water requirements to reduce irrigated yields. However, we can see clearly in the plot below that irrigated yield is projected to have a greater increase under SSP585 than SSP245. Specifically, this is likely caused by the increasing temperatures benefitting crop growth. Crop yield can benefit from higher temperatures when there is sufficient crop water availability from irrigation. The crop can use evapotranspiration to maintain safe leaf temperatures whilst maximising growth and therefore yield.
     
   ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_3_G.png')
+  knitr::include_graphics('imgs/tut_3_I.png')
   ```
   
   </div>
@@ -169,7 +169,7 @@ XXXXX
   XXXXX
     
   ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_3_H.png')
+  knitr::include_graphics('imgs/tut_3_G.png')
   ```
   
   </div>
@@ -187,7 +187,7 @@ XXXXX
   XXXXX
     
   ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_3_I.png')
+  knitr::include_graphics('imgs/tut_3_H.png')
   ```
   
   </div>

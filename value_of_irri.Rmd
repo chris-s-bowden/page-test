@@ -118,7 +118,7 @@ Use the checkboxes on the 'Visualize outputs' tab to answer the following questi
 
 Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first task?
 
-<button class="btn btn-primary3" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
   <div id="Block3" class="collapse">  
   
   There is far greater irrigation than rainfall for every year, due to the extremely low rainfall of central California. This represents the opposite rainfall scenario to the plot from the eastern corn belt.

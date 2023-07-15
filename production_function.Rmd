@@ -26,6 +26,12 @@ Select the 'Run AquaCrop' tab and browse through all of the model parameters tha
 
 \
 
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/tut_2_X.png')
+```
+
+\
+
 ## Interpret outputs
 Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Mato Grosso. Using the Yield-Irrigation figure and data, answer the following questions:
 
