@@ -29,13 +29,13 @@ knitr::include_graphics('imgs/tut_1_A.png')
 ## Setup and run AquaCrop
 Select the 'Run AquaCrop' tab and browse through all of the model parameters that can be tweaked. Leave all parameters as their default values for now, but pay particular attention to the 'Irrigation' tab. This tab is where you adjust parameters of your irrigation system, including the application efficiency, maximum application rate or capacity of your irrigation system, and the levels of soil moisture (\% of soil water holding capacity) at which irrigation will be triggered in each of the crop's four main growth stages. Click the 'Run model' button to execute the model using the default set of parameters and geospatial weather and soil input data.
 
-\
+<!-- \ -->
 
-:::: {.whitebox .question data-latex="{question}"}
-**Question**
+<!-- :::: {.whitebox .question data-latex="{question}"} -->
+<!-- **Question** -->
 
-How would you expect the yield and irrigation usage to change if you increased/decreased the SMT level at which irrigation is triggered? What about if you used higher/lower SMT values for specific crop growth stages?
-::::
+<!-- How would you expect the yield and irrigation usage to change if you increased/decreased the SMT level at which irrigation is triggered? What about if you used higher/lower SMT values for specific crop growth stages? -->
+<!-- :::: -->
 
 \
 
@@ -49,12 +49,13 @@ Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the o
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.a.**
 
-Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? Is the amount of irrigation generally greater or less than the amount of rainfall received by the crop?
+Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? Is the amount of irrigation generally higher or lower than the amount of rainfall received by the crop?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1"> Show/Hide Example </button>  
   <div id="Block1" class="collapse">  
   
-  Irrigation is generally less than the rainfall received by the crop. However, in years with particularly low rainfall, a greater amount of irrigation is used to meet maize's water demands.
+  \
+  In the majority of years, the majority of the crop's water needs are fully met by rainfall and irrigation is generally minimal. In some years with lower than average rainfall (e.g., 1999, 2007, 2012), a larger amount of irrigation is required to meet the maize crop's water demands. However, even in these years, the amount of irrigation water used is still less than the amount of water provided by rainfall during the growing season.
     
   ```{r echo=FALSE, out.width='100%'}
   knitr::include_graphics('imgs/tut_1_B.png')
@@ -69,13 +70,13 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.b.**
 
-Now looking at the 'rainfed vs irrigated yield' and 'irrigation water productivity' plots, do you think that rainfall in your selected site in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
+Now looking at the 'rainfed vs irrigated yield' plot, do you think that rainfall in Richmond in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Show/Hide Example </button>  
   <div id="Block2" class="collapse">  
   
-  Generally, rainfall is sufficient for maize's water demands in Richmond, Indiana. This can be seen by the similar levels of yield for rainfed and irrigated maize in most years. Also, yields remain relatively stable due to consistent rainfall each year. The spikes in irrigation water productivity represent occassional low rainfall years (e.g. 1999), where irrigation was required to meet maize's water demands. 
-    
+  Generally, rainfall is sufficient for maize's water demands in Richmond, Indiana. This can be seen by the similar levels of yield acheived for both rainfed and irrigated maize production in most years, along with the stability of rainfed yields across years. The largest yield gains from irrigation are typically found in years with lowest rainfall (e.g., 1999, 2007, 2012), but there are also small yield gains from irrigation in other years (e.g., 1991). These reflect years where relatively small amounts of supplemental irrigation play an important role in buffering crops against dry spells within the growing season, which can occur even when total seasonal rainfall is sufficient to meet crop needs. 
+  
   ```{r echo=FALSE, out.width='100%'}
   knitr::include_graphics('imgs/tut_1_C.png')
   ```

@@ -1,23 +1,29 @@
 ---
-title: "AquaPlan"
+title: "About AquaPlan"
 ---
  
-AquaPlan is a powerful crop management tool that enables farmers, businesses, and governments to make more informed decisions about water management, irrigation investment, and climate risks. Under the hood, it leverages [AquaCrop-OSPy](https://github.com/aquacropos/aquacrop), the open-source Python implementation of the [AquaCrop](https://www.fao.org/aquacrop/en/) crop-growth model produced by the Food and Agriculture Organization of the United Nations (FAO). AquaCrop is used by scientists and researchers around the world to simulate how crops are impacted by water management decisions and climate variability.
+AquaPlan is a powerful crop management tool that enables farmers, businesses, and governments to make more informed decisions about water management, irrigation investment, and climate risks. Under the hood, it leverages [AquaCrop-OSPy](https://github.com/aquacropos/aquacrop). AquaCrop-OSPy is open-source Python implementation, developed by the University of Manchester and partners, of the [AquaCrop](https://www.fao.org/aquacrop/en/) crop-growth model produced by the Food and Agriculture Organization of the United Nations (FAO). AquaCrop-OSPy is used by scientists and practitioners around the world to quantify how crops are impacted by water scarcity, climate variability and change. 
 
 \
 
-AquaPlan currently has five applications:
+AquaPlan currently has three main applications:
 
-1. **Value of Irrigation**: This application provides crop yield and irrigation water use calculations for any user specified cropping system and region around the world. Results of these calculations can be viewed as interactive graphs of expected crop yields under both rainfed and irrigated conditions.
 
-2. **Crop-Water Production Function**: This application enables users to develop crop-water production functions representing the relationship between applied irrigation and crop yields for different agricultural production systems in any region around the world. User-generated crop-water production functions provide information about optimal field-level irrigation decisions, which can also be used to support basin-scale analysis of water policies, projects, and scarcity.
+1.) **Value of Irrigation**: This application provides crop yield and irrigation water use calculations for any user specified cropping system and region around the world. Results of these calculations can be viewed as interactive graphs of expected crop yields under both rainfed and irrigated conditions.
 
-3. **Climate Change Impacts**: This application can be used to simulate the impacts of climate change on crop yields and irrigation water demands for a user-specified cropping system. Users can run up to four CMIP6 baseline or projected scenarios, enabling comparison of climate impacts across different climate models, time periods, and/or shared socio-economic pathways. Downloading and pre-processing of CMIP6 climate data needed to run AquaPlan is automated by the CMIP6 data downloader tool, simplifying substantially the complex and time-consuming task of downloading and processing CMIP6 data.
+2.) **Crop-Water Production Function**: This application enables users to develop crop-water production functions representing the relationship between applied irrigation and crop yields for different agricultural production systems in any region around the world. User-generated crop-water production functions provide information about optimal field-level irrigation decisions, which can also be used to support basin-scale analysis of water policies, projects, and scarcity.
 
-4. **Regional simulations**: This application extends the single- point functionality of the Value of Irrigation tool to enable users to run AquaPlan over multiple points or grid cells for a user-defined area of interest. Simulated crop yield and irrigation demands can then be visualised on an interactive map, allowing easy spatial comparisons of yields and value of irrigation across a region.
+3.) **Climate Change Impacts**: This application can be used to simulate the impacts of climate change on crop yields and irrigation water demands for a user-specified cropping system. Users can run up to four baseline or projected future climate scenarios, enabling comparison of climate impacts across different climate models, time periods, and/or shared socio-economic pathways. 
 
-5. **Customize Crop Parameters**:This tool enables users to alter the default crop parameters in AquaCrop-OSPy. A user can define their own custom crops to better reflect the varieties in their chosen region. These customized crops can then be uploaded to any of the applications within AquaPlan, or used within AquaCrop-OSPy simulations outside of AquaPlan.
+<!-- 4. **Regional simulations**: This application extends the single- point functionality of the Value of Irrigation tool to enable users to run AquaPlan over multiple points or grid cells for a user-defined area of interest. Simulated crop yield and irrigation demands can then be visualised on an interactive map, allowing easy spatial comparisons of yields and value of irrigation across a region. -->
 
 \
 
+AquaPlan also comes with a number of supporting web tools to help users to setup and customize simulations:
+
+a.) **Customize Crop Parameters**:This tool enables users to alter the default crop parameters in AquaCrop-OSPy. A user can define their own custom crops to better reflect the varieties in their chosen region. These customized crops can then be uploaded to any of the applications within AquaPlan, or used within AquaCrop-OSPy simulations outside of AquaPlan.
+
+b.) **CMIP6 Data Downloader**: This tool enables users to interactively download and pre-process CMIP6 climate model data into formats needed to run climate change impacts analysis in AquaPlan. The tool substantially simplifies the complex and time-consuming task of downloading and processing climate model data from raw netcdf files. 
+
+\
 More information, including screenshots and gifs, can be found at The University of Manchester's [article](https://www.manchester.ac.uk/discover/news/manchester-scientists-launch-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment/), Tim Foster's medium [post](https://medium.com/@agwater/aquaplan-a-new-interactive-tool-for-agricultural-water-management-and-climate-risk-assessment-82c50cb10144), or twitter [thread](https://twitter.com/tim_foster_88/status/1557728807758737408).

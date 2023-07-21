@@ -13,7 +13,7 @@
 
 <title>Value of Irrigation</title>
 
-<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -415,15 +415,11 @@ of soil water holding capacity) at which irrigation will be triggered in
 each of the crop’s four main growth stages. Click the ‘Run model’ button
 to execute the model using the default set of parameters and geospatial
 weather and soil input data.</p>
-<p><br />
-</p>
-<div class="whitebox question">
-<p><strong>Question</strong></p>
-<p>How would you expect the yield and irrigation usage to change if you
-increased/decreased the SMT level at which irrigation is triggered? What
-about if you used higher/lower SMT values for specific crop growth
-stages?</p>
-</div>
+<!-- \ -->
+<!-- :::: {.whitebox .question data-latex="{question}"} -->
+<!-- **Question** -->
+<!-- How would you expect the yield and irrigation usage to change if you increased/decreased the SMT level at which irrigation is triggered? What about if you used higher/lower SMT values for specific crop growth stages? -->
+<!-- :::: -->
 <p><br />
 </p>
 <!-- could add breakdown of each slider/parameter set here? -->
@@ -439,15 +435,20 @@ Using these plots, try to answer the following questions.</p>
 <p><strong>Question 1.a.</strong></p>
 <p>Using the ‘total rainfed and irrigation’ plot, how does the amount of
 rainfall and irrigation water use vary across the 30-year (1991-2020)
-simulation period? Is the amount of irrigation generally greater or less
+simulation period? Is the amount of irrigation generally higher or lower
 than the amount of rainfall received by the crop?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1">
 Show/Hide Example
 </button>
 <div id="Block1" class="collapse">
-<p>Irrigation is generally less than the rainfall received by the crop.
-However, in years with particularly low rainfall, a greater amount of
-irrigation is used to meet maize’s water demands.</p>
+<p><br />
+In the majority of years, the majority of the crop’s water needs are
+fully met by rainfall and irrigation is generally minimal. In some years
+with lower than average rainfall (e.g., 1999, 2007, 2012), a larger
+amount of irrigation is required to meet the maize crop’s water demands.
+However, even in these years, the amount of irrigation water used is
+still less than the amount of water provided by rainfall during the
+growing season.</p>
 <p><img src="imgs/tut_1_B.png" width="100%" /></p>
 </div>
 </div>
@@ -455,21 +456,25 @@ irrigation is used to meet maize’s water demands.</p>
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Now looking at the ‘rainfed vs irrigated yield’ and ‘irrigation water
-productivity’ plots, do you think that rainfall in your selected site in
-the eastern corn belt is generally sufficient to meet the water
-requirements of maize in the majority of years?</p>
+<p>Now looking at the ‘rainfed vs irrigated yield’ plot, do you think
+that rainfall in Richmond in the eastern corn belt is generally
+sufficient to meet the water requirements of maize in the majority of
+years?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2">
 Show/Hide Example
 </button>
 <div id="Block2" class="collapse">
 <p>Generally, rainfall is sufficient for maize’s water demands in
-Richmond, Indiana. This can be seen by the similar levels of yield for
-rainfed and irrigated maize in most years. Also, yields remain
-relatively stable due to consistent rainfall each year. The spikes in
-irrigation water productivity represent occassional low rainfall years
-(e.g. 1999), where irrigation was required to meet maize’s water
-demands.</p>
+Richmond, Indiana. This can be seen by the similar levels of yield
+acheived for both rainfed and irrigated maize production in most years,
+along with the stability of rainfed yields across years. The largest
+yield gains from irrigation are typically found in years with lowest
+rainfall (e.g., 1999, 2007, 2012), but there are also small yield gains
+from irrigation in other years (e.g., 1991). These reflect years where
+relatively small amounts of supplemental irrigation play an important
+role in buffering crops against dry spells within the growing season,
+which can occur even when total seasonal rainfall is sufficient to meet
+crop needs.</p>
 <p><img src="imgs/tut_1_C.png" width="100%" /></p>
 </div>
 </div>
