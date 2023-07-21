@@ -13,7 +13,7 @@
 
 <title>Value of Irrigation</title>
 
-<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -29,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.ico"/>
 
 <style type="text/css">
@@ -45,7 +45,6 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
-
 
 
 
@@ -76,9 +75,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -136,15 +132,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +165,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,9 +174,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -301,7 +300,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -321,7 +320,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -367,36 +366,14 @@ div.tocify {
 
 <p><br />
 </p>
-<p>Irrigation plays a critical role in enhancing agricultural
-productivity and supporting drought resilience. In this exercise, you
-will use the AquaPlan app to explore how the value and benefits derived
-from irrigation varies between different locations and over time. You
-will assess the yield benefits and water requirements for irrigated
-maize production in three locations across the United States (Indiana,
-California, and Nebraska), which vary in terms of the amount and
-variability of rainfall received during the maize growing season (May to
-September). You will demonstrate the value of irrigation as a means of
-both increasing crop yields in areas with insufficient rainfall, and
-reducing drought risk exposure in agricultural production regions where
-rainfall levels vary substantially from one year to another.</p>
+<p>Irrigation plays a critical role in enhancing agricultural productivity and supporting drought resilience. In this exercise, you will use the AquaPlan app to explore how the value and benefits derived from irrigation varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). You will demonstrate the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing drought risk exposure in agricultural production regions where rainfall levels vary substantially from one year to another.</p>
 <p><br />
 </p>
 <div id="site-1---richmond-indiana" class="section level1">
 <h1>Site 1 - Richmond, Indiana</h1>
 <div id="select-a-field" class="section level2">
 <h2>Select a field</h2>
-<p>Start by investigating the eastern corn belt of the United States, a
-region where the majority of agriculture is currently rainfed. Begin by
-launching AquaPlan (‘Launch App’ button at the top-right of this page)
-and navigating to the ‘Value of Irrigation’ tab. Then, enter the
-following coordinates (39.909609, -84.900238) in the search box to
-locate an example field in the vicinity of Richmond. Note, you will then
-need to use a marker to select a point in the field as shown on the map
-below. AquaPlan will automatically retrieve weather data for the site
-from the Daymet gridded weather dataset produced by Oak Ridge National
-Laboratory in the United States along with soil properties from the
-global SoilGrids dataset produced by the International Soil Reference
-and Information Centre (ISRIC).</p>
+<p>Start by investigating the eastern corn belt of the United States, a region where the majority of agriculture is currently rainfed. Begin by launching AquaPlan (‘Launch App’ button at the top-right of this page) and navigating to the ‘Value of Irrigation’ tab. Then, enter the following coordinates (39.909609, -84.900238) in the search box to locate an example field in the vicinity of Richmond. Note, you will then need to use a marker to select a point in the field as shown on the map below. AquaPlan will automatically retrieve weather data for the site from the Daymet gridded weather dataset produced by Oak Ridge National Laboratory in the United States along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).</p>
 <p><br />
 </p>
 <p><img src="imgs/tut_1_A.png" width="100%" /></p>
@@ -405,16 +382,7 @@ and Information Centre (ISRIC).</p>
 </div>
 <div id="setup-and-run-aquacrop" class="section level2">
 <h2>Setup and run AquaCrop</h2>
-<p>Select the ‘Run AquaCrop’ tab and browse through all of the model
-parameters that can be tweaked. Leave all parameters as their default
-values for now, but pay particular attention to the ‘Irrigation’ tab.
-This tab is where you adjust parameters of your irrigation system,
-including the application efficiency, maximum application rate or
-capacity of your irrigation system, and the levels of soil moisture (%
-of soil water holding capacity) at which irrigation will be triggered in
-each of the crop’s four main growth stages. Click the ‘Run model’ button
-to execute the model using the default set of parameters and geospatial
-weather and soil input data.</p>
+<p>Select the ‘Run AquaCrop’ tab and browse through all of the model parameters that can be tweaked. Leave all parameters as their default values for now, but pay particular attention to the ‘Irrigation’ tab. This tab is where you adjust parameters of your irrigation system, including the application efficiency, maximum application rate or capacity of your irrigation system, and the levels of soil moisture (% of soil water holding capacity) at which irrigation will be triggered in each of the crop’s four main growth stages. Click the ‘Run model’ button to execute the model using the default set of parameters and geospatial weather and soil input data.</p>
 <!-- \ -->
 <!-- :::: {.whitebox .question data-latex="{question}"} -->
 <!-- **Question** -->
@@ -426,29 +394,18 @@ weather and soil input data.</p>
 </div>
 <div id="visualise-and-interpret-outputs" class="section level2">
 <h2>Visualise and interpret outputs</h2>
-<p>Navigate to the ‘Visualize outputs’ tab, and use the checkboxes to
-explore the outputs of the AquaPlan simulations for the site in Indiana.
-Using these plots, try to answer the following questions.</p>
+<p>Navigate to the ‘Visualize outputs’ tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Indiana. Using these plots, try to answer the following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
-<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of
-rainfall and irrigation water use vary across the 30-year (1991-2020)
-simulation period? Is the amount of irrigation generally higher or lower
-than the amount of rainfall received by the crop?</p>
+<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? Is the amount of irrigation generally higher or lower than the amount of rainfall received by the crop?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1">
 Show/Hide Example
 </button>
 <div id="Block1" class="collapse">
 <p><br />
-In the majority of years, the majority of the crop’s water needs are
-fully met by rainfall and irrigation is generally minimal. In some years
-with lower than average rainfall (e.g., 1999, 2007, 2012), a larger
-amount of irrigation is required to meet the maize crop’s water demands.
-However, even in these years, the amount of irrigation water used is
-still less than the amount of water provided by rainfall during the
-growing season.</p>
+In the majority of years, the majority of the crop’s water needs are fully met by rainfall and irrigation is generally minimal. In some years with lower than average rainfall (e.g., 1999, 2007, 2012), a larger amount of irrigation is required to meet the maize crop’s water demands. However, even in these years, the amount of irrigation water used is still less than the amount of water provided by rainfall during the growing season.</p>
 <p><img src="imgs/tut_1_B.png" width="100%" /></p>
 </div>
 </div>
@@ -456,32 +413,18 @@ growing season.</p>
 </p>
 <div class="whitebox question">
 <p><strong>Question 1.b.</strong></p>
-<p>Now looking at the ‘rainfed vs irrigated yield’ plot, do you think
-that rainfall in Richmond in the eastern corn belt is generally
-sufficient to meet the water requirements of maize in the majority of
-years?</p>
+<p>Now looking at the ‘rainfed vs irrigated yield’ plot, do you think that rainfall in Richmond in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2">
 Show/Hide Example
 </button>
 <div id="Block2" class="collapse">
-<p>Generally, rainfall is sufficient for maize’s water demands in
-Richmond, Indiana. This can be seen by the similar levels of yield
-acheived for both rainfed and irrigated maize production in most years,
-along with the stability of rainfed yields across years. The largest
-yield gains from irrigation are typically found in years with lowest
-rainfall (e.g., 1999, 2007, 2012), but there are also small yield gains
-from irrigation in other years (e.g., 1991). These reflect years where
-relatively small amounts of supplemental irrigation play an important
-role in buffering crops against dry spells within the growing season,
-which can occur even when total seasonal rainfall is sufficient to meet
-crop needs.</p>
+<p>Generally, rainfall is sufficient for maize’s water demands in Richmond, Indiana. This can be seen by the similar levels of yield acheived for both rainfed and irrigated maize production in most years, along with the stability of rainfed yields across years. The largest yield gains from irrigation are typically found in years with lowest rainfall (e.g., 1999, 2007, 2012), but there are also small yield gains from irrigation in other years (e.g., 1991). These reflect years where relatively small amounts of supplemental irrigation play an important role in buffering crops against dry spells within the growing season, which can occur even when total seasonal rainfall is sufficient to meet crop needs.</p>
 <p><img src="imgs/tut_1_C.png" width="100%" /></p>
 </div>
 </div>
 <p><br />
 </p>
-<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a
-screenshot of these three plots for later reference.</strong></p>
+<p><strong>Use the shortcut ‘Windows key + Shift + S’ to take a screenshot of these three plots for later reference.</strong></p>
 <p><br />
 </p>
 </div>
@@ -490,62 +433,39 @@ screenshot of these three plots for later reference.</strong></p>
 <h1>Site 2 - Los Banos, California</h1>
 <div id="select-a-field-and-re-run-aquacrop" class="section level2">
 <h2>Select a field and re-run AquaCrop</h2>
-<p>We’ll now run the model for a different location in the US. Return to
-the ‘Select region’ tab, refresh the page and select a field in the
-Central Valley of California near to the town of Los Banos by entering
-the following coordinates (37.174492, -120.347741) in the search box of
-the map as shown below.</p>
+<p>We’ll now run the model for a different location in the US. Return to the ‘Select region’ tab, refresh the page and select a field in the Central Valley of California near to the town of Los Banos by entering the following coordinates (37.174492, -120.347741) in the search box of the map as shown below.</p>
 <!-- Tips no longer required with new refresh step: Note that the place marker for the first site will still be shown on the map, but the model will only use the last point created for simulations. When you return to the 'Select region' tab, your view will also be zoomed in very far, either scroll down or use the '-' button on the map to zoom out. -->
 <!-- Map disappears when switching tabs, can't find a solution to this apart from refreshing page, not sure what function is responsible for the map disappearing -->
 <p><img src="imgs/tut_1_D.png" width="100%" /></p>
 <p> </p>
-<p>As in the first site, go to the ‘Run AquaCrop’ tab and run the model
-again for the newly selected field in California. Keep all of the
-parameters at the same default values.</p>
+<p>As in the first site, go to the ‘Run AquaCrop’ tab and run the model again for the newly selected field in California. Keep all of the parameters at the same default values.</p>
 <p><br />
 </p>
 </div>
 <div id="visualise-and-compare-outputs" class="section level2">
 <h2>Visualise and compare outputs</h2>
-<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the
-following questions.</p>
+<p>Use the checkboxes on the ‘Visualize outputs’ tab to answer the following questions.</p>
 <p><br />
 </p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
-<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of
-rainfall and irrigation water use vary across the 30-year (1991-2020)
-simulation period? What differences do you notice between this plot and
-the plot from the eastern corn belt in the first task?</p>
+<p>Using the ‘total rainfed and irrigation’ plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first part of the exercise?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block3">
 Show/Hide Example
 </button>
 <div id="Block3" class="collapse">
-<p>There is far greater irrigation than rainfall for every year, due to
-the extremely low rainfall of central California. This represents the
-opposite rainfall scenario to the plot from the eastern corn belt.</p>
+<p>The amount of irrigation required to meet maize crop water requirements in much larger than the amount of rainfall received in every year, due to the extremely low rainfall during the summer growing season in central California. This represents the opposite pattern to the field in the eastern Corn Belt, where irrigation was only required to supplement shortfalls of rainfall in a subset of historic years.</p>
 <p><img src="imgs/tut_1_E.png" width="100%" /></p>
 </div>
 </div>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>Looking at the ‘rainfed vs irrigated yield’ plot, is rainfed maize
-production likely to be viable in this site in Central California and,
-if so, in which years? How does the difference between rainfed and
-irrigated yields compare to what you observed previously for the site in
-Indiana?</p>
+<p>Looking at the ‘rainfed vs irrigated yield’ plot, is rainfed maize production likely to be viable in this site in Central California and, if so, in which years? How does the difference between rainfed and irrigated yields compare to what you observed previously for the site in Indiana?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block4">
 Show/Hide Example
 </button>
 <div id="Block4" class="collapse">
-<p>Rainfed maize production is inviable across all 30 years simulated
-here, with yield never exceeding 2 t/ha compared to irrigated yield
-consistently exceeding 14 t/ha. This represents a huge difference
-between rainfed and irrigated yields, a stark contrast to the Indiana
-site where irrigation resulted in little to no increase in yield.</p>
-<p>The stability of yields in California are high due to the consistent
-use of irrigation. The stability of yields in Indiana are similarly
-high, but are instead due to consistent rainfall.</p>
+<p>Rainfed maize production is not viable across all 30 years simulated here, with yields never exceeding 2 t/ha compared to irrigated yield consistently exceeding 14 t/ha. This large and consistent difference between rainfed and irrigated yields is a stark contrast to the site in the eastern Corn Belt where irrigation resulted in little to no increase in yield in the majority of years. Variability in yields is only low in California with consistent use of irrigation, whereas yield stability in the eastern Corn Belt site is possible even under rainfed production conditions.</p>
 <p><img src="imgs/tut_1_F.png" width="100%" /></p>
 </div>
 </div>
@@ -557,75 +477,44 @@ high, but are instead due to consistent rainfall.</p>
 <h1>Site 3 - Imperial, Nebraska</h1>
 <div id="select-field-and-re-run-model" class="section level2">
 <h2>Select field and re-run model</h2>
-<p>In the final part of this exercise, we will re-run AquaCrop to
-simulate maize yields and irrigation requirements for a third location -
-this time in Imperial, Nebraska in the central United States. Enter the
-following coordinates (40.499672, -101.686346) into the search box and
-re-run the model again using the default parameters.</p>
+<p>In the final part of this exercise, we will apply AquaCrop to simulate maize yields and irrigation requirements for a third location - this time in Imperial, Nebraska in the central United States. Enter the following coordinates (40.499672, -101.686346) into the search box and re-run the model again using the default parameters.</p>
 <p><img src="imgs/tut_1_G.png" width="100%" /></p>
 <p><br />
 </p>
 </div>
 <div id="visualise-and-compare-outputs-1" class="section level2">
 <h2>Visualise and compare outputs</h2>
-<p>Use the outputs for the new simulation for the site in Nebraska,
-along with the screenshots you previously saved, to answer the following
-questions.</p>
+<p>Use the outputs for the new simulation for the site in Nebraska, along with the screenshots you previously saved, to answer the following questions.</p>
 <div class="whitebox question">
 <p><strong>Question 3.a.</strong></p>
-<p>How does the amount and variability of rainfall differ in
-southwestern Nebraska compared to that of the site in central California
-and the site in Indiana the eastern corn belt?</p>
+<p>How does the amount and variability of seasonal rainfall differ in the site in southwestern Nebraska compared to that of the sites in central California and Indiana?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block5">
 Show/Hide Example
 </button>
 <div id="Block5" class="collapse">
-<p>Whereas the sites in California (dry) and Indiana (wet) represented
-extreme annual rainfall patterns, the rainfall at the Nebraska site
-shows greater inter-annual variation, i.e. some years receive similar
-levels of rainfall to Indiana, but some years receive very little
-rainfall.</p>
+<p>The sites in California (dry) and Indiana (wet) represented sites with consistently low or high annual rainfall patterns. In contrast, seasonal rainfall at the Nebraska site shows greater inter-annual variation, with some years receive similar levels of rainfall to the site in Indiana but other years receive very little rainfall during the growing season.</p>
 <p><img src="imgs/tut_1_H.png" width="100%" /></p>
 </div>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.b.</strong></p>
-<p>How does the inter-annual variability in seasonal rainfall that you
-identified in the previous question affect the amount of irrigation that
-is used by the farmer and the yield benefits of irrigation? In which
-years are the benefits of irrigation highest and lowest?</p>
+<p>How does the inter-annual variability in seasonal rainfall for the site in Nebraska affect the amount of irrigation that is used by the farmer and the yield benefits of irrigation? In which years are the benefits of irrigation highest and lowest?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block6">
 Show/Hide Example
 </button>
 <div id="Block6" class="collapse">
-<p>Years with lower rainfall require the farmer to use a greater amount
-of irrigation to meet maize’s water demands (e.g. 2012 and 2013). In low
-rainfall years there is a deficit in the water requirements of maize.
-Thus, the yield benefits of irrigation are higher in low rainfall years.
-Irrigation benefit is highest in 2017 (one of lowest rainfall years,
-white arrows) and lowest in 1996 (highest rainfall year, yellow
-arrows).</p>
+<p>Years with lower rainfall require the farmer to use a greater amount of irrigation to meet maize’s water demands (e.g. 2012 and 2013). In low rainfall years, irrigation is needed to make up the deficit in rainfall and avoid crop water stress and yield losses. As a result, the absolute yield benefits (i.e., the difference between irrigated and rainfed yields) of irrigation are greatest in low rainfall years. Irrigation benefit is highest in 2017 (one of lowest rainfall years, white arrows) and lowest in 1996 (highest rainfall year, yellow arrows).</p>
 <p><img src="imgs/tut_1_I.png" width="100%" /></p>
 </div>
 </div>
 <div class="whitebox question">
 <p><strong>Question 3.c.</strong></p>
-<p>Which years have the highest levels of irrigation water productivity?
-Can you use differences in rainfall and irrigation requirements to
-explain why the productivity of irrigation is greatest in those
-years?</p>
+<p>Which years have the highest levels of irrigation water productivity? Can you use differences in rainfall and irrigation requirements to explain why the productivity of irrigation is greatest in those years?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block7">
 Show/Hide Example
 </button>
 <div id="Block7" class="collapse">
-<p>Irrigation water productivity was highest in 2017 (white arrows) and
-2020 (yellow arrows). These years are both amongst the lowest rainfall
-years of the 30-year period, as shown by the top plot. Specifically,
-rainfed maize was inviable in both of these years, as shown by the
-middle plot. The inviability of rainfed maize means that there is the
-greatest difference between rainfed and irrigated yields for 2017 and
-2022. Thus, the productivity of irrigation is greatest in these
-years.</p>
+<p>Irrigation water productivity was highest in 2017 (white arrows) and 2020 (yellow arrows). These years are both among the lowest rainfall years of the 30-year period, as shown by the top plot. Rainfed maize yields were very low in both of these years, as shown by the middle plot, meaning that the productivity of irrigation water was high. In contrast, irrigation water productivity was slightly lower in other major drought years, such as 2003 and 2012. This is because although yields benefits of irrigation were large, irrigation water requirements were also higher than in 2017 and 2020 constraining the overall productivity of water in 2003 and 2012. This highlights that irrigation water productivity changes from year to another will depend on changes in both crop yields and water use by farmers.</p>
 <p><img src="imgs/tut_1_J.png" width="100%" /></p>
 </div>
 </div>

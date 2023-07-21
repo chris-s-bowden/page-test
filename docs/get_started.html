@@ -13,7 +13,7 @@
 
 <title>Get Started</title>
 
-<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
@@ -29,12 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.ico"/>
 
 <style type="text/css">
@@ -45,7 +45,6 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
-
 
 
 <style type="text/css">
@@ -128,20 +127,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
+    for (var j = 0; j < rules.length; j++) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -177,9 +169,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -237,15 +226,11 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -274,8 +259,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -283,9 +268,16 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
+  content: "&#xe258;";
   border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -402,7 +394,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -422,7 +414,7 @@ div.tocify {
   <a href="get_started.html">Get Started</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Exercises
      
     <span class="caret"></span>
@@ -470,42 +462,21 @@ div.tocify {
 </p>
 <div id="run-the-app-on-a-web-browser" class="section level1">
 <h1>Run the app on a web browser</h1>
-<p>The AquaPlan app is hosted online for your convenience, using
-Streamlit’s Community Cloud server. The app can be accessed and run
-using any standard web browser (Chrome, Firefox, Safari, Edge) by
-clicking the Launch App tab on the top menu bar of this page or by
-navigating manually to the app in the browser (<a
-href="https://tinyurl.com/aquaplan"
-class="uri">https://tinyurl.com/aquaplan</a>)</p>
-<p>As Streamlit’s Community Cloud server only provides a limited amount
-of compute power, it is possible that you may experience minor delays or
-error messages in the event that large numbers of users are accessing
-the app simultaneously. In these cases, it may be necessary to reboot
-the app or to wait for more bandwith to free up. For a list of common
-error messages and associated solutions, please refer to the FAQ section
-on the top menu bar of this page.</p>
+<p>The AquaPlan app is hosted online for your convenience, using Streamlit’s Community Cloud server. The app can be accessed and run using any standard web browser (Chrome, Firefox, Safari, Edge) by clicking the Launch App tab on the top menu bar of this page or by navigating manually to the app in the browser (<a href="https://tinyurl.com/aquaplan" class="uri">https://tinyurl.com/aquaplan</a>)</p>
+<p>As Streamlit’s Community Cloud server only provides a limited amount of compute power, it is possible that you may experience minor delays or error messages in the event that large numbers of users are accessing the app simultaneously. In these cases, it may be necessary to reboot the app or to wait for more bandwith to free up. For a list of common error messages and associated solutions, please refer to the FAQ section on the top menu bar of this page.</p>
 <p><br />
 </p>
 </div>
 <div id="install-and-run-the-app-locally" class="section level1">
 <h1>Install and run the app locally</h1>
-<p>For prolonged or intensive usage, you will find it easier to create a
-locally-hosted instance of AquaPlan. The following steps describe how to
-host AquaPlan locally on your machine, assuming no prior knowledge of
-hosting or cloning repositories.</p>
-<p>The AquaPlan repository (‘repo’) is currently private, so you will
-need to gain access before continuing with this guide.</p>
+<p>For prolonged or intensive usage, you will find it easier to create a locally-hosted instance of AquaPlan. The following steps describe how to host AquaPlan locally on your machine, assuming no prior knowledge of hosting or cloning repositories.</p>
+<p>The AquaPlan repository (‘repo’) is currently private, so you will need to gain access before continuing with this guide.</p>
 <p><br />
 </p>
 <div id="create-fork" class="section level2">
 <h2>Create fork</h2>
-<p>We begin by creating a fork from the main AquaPlan repo. By forking
-the repo, we copy its contents into a duplicate repo. This acts as a
-safety measure to prevent unchecked changes accidentally being made to
-the main repo, which is currently used to generate the live web-app.</p>
-<p>To create a fork, navigate to the AquaPlan repo, locate the ‘Fork’
-drop-down menu (shown below) and select ‘Create a new fork’. Then,
-follow the dialogue prompts to choose a location for your fork.</p>
+<p>We begin by creating a fork from the main AquaPlan repo. By forking the repo, we copy its contents into a duplicate repo. This acts as a safety measure to prevent unchecked changes accidentally being made to the main repo, which is currently used to generate the live web-app.</p>
+<p>To create a fork, navigate to the AquaPlan repo, locate the ‘Fork’ drop-down menu (shown below) and select ‘Create a new fork’. Then, follow the dialogue prompts to choose a location for your fork.</p>
 <p><br />
 </p>
 <p><img src="imgs/tut_0_A.png" width="100%" /></p>
@@ -514,65 +485,39 @@ follow the dialogue prompts to choose a location for your fork.</p>
 </div>
 <div id="clone-fork-to-local-machine" class="section level2">
 <h2>Clone fork to local machine</h2>
-<p>Next, we clone (i.e. ‘copy’) the forked repo from the previous step
-onto your local machine. First, copy the HTTPS link from your repo as
-shown in the images below:</p>
+<p>Next, we clone (i.e. ‘copy’) the forked repo from the previous step onto your local machine. First, copy the HTTPS link from your repo as shown in the images below:</p>
 <p><br />
 </p>
 <p><img src="imgs/tut_0_B.png" width="100%" /></p>
 <p><br />
 </p>
-<p>Then, create an empty folder on your machine where you would like to
-store the AquaPlan app. Open your IDE of choice (e.g. Visual Studio
-Code) and set the empty folder you just created as your working
-directory. Start a terminal and enter the following command to clone
-your repo, replacing <strong>your-repo-url-here</strong> with the URL
-you copied from GitHub previously.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone your-repo-url-here</span></code></pre></div>
+<p>Then, create an empty folder on your machine where you would like to store the AquaPlan app. Open your IDE of choice (e.g. Visual Studio Code) and set the empty folder you just created as your working directory. Start a terminal and enter the following command to clone your repo, replacing <strong>your-repo-url-here</strong> with the URL you copied from GitHub previously.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone your-repo-url-here</span></code></pre></div>
 <p>The repo will now be cloned into your new folder.</p>
 <p><br />
 </p>
 </div>
 <div id="create-conda-environment" class="section level2">
 <h2>Create ‘conda’ environment</h2>
-<p>Next, we need to load all of the packages required to run AquaPlan.
-Here, we use ‘conda’ to install all of our required packages. In the
-same terminal as before, enter the following command to create a new,
-blank ‘conda’ environment using Python version 3.9 (you can replace
-“environment-name” with any name).</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="st">&quot;environment-name&quot;</span> python=3.9</span></code></pre></div>
-<p>Once the environment is created, we then need to activate it using
-the following command to begin working within the ‘conda’
-environment:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate environment-name</span></code></pre></div>
+<p>Next, we need to load all of the packages required to run AquaPlan. Here, we use ‘conda’ to install all of our required packages. In the same terminal as before, enter the following command to create a new, blank ‘conda’ environment using Python version 3.9 (you can replace “environment-name” with any name).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="st">&quot;environment-name&quot;</span> python=3.9</span></code></pre></div>
+<p>Once the environment is created, we then need to activate it using the following command to begin working within the ‘conda’ environment:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate environment-name</span></code></pre></div>
 <p><br />
 </p>
 </div>
 <div id="install-required-packages" class="section level2">
 <h2>Install required packages</h2>
-<p>All of the required packages and their versions are contained within
-the file <strong>“requirements.txt”</strong> in the AquaPlan repo. This
-makes installation straightforward, though it may take some time on the
-first run. Simply enter the following command into the terminal:</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div>
+<p>All of the required packages and their versions are contained within the file <strong>“requirements.txt”</strong> in the AquaPlan repo. This makes installation straightforward, though it may take some time on the first run. Simply enter the following command into the terminal:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div>
 <p><br />
 </p>
 </div>
 <div id="run-app-locally" class="section level2">
 <h2>Run app locally</h2>
-<p>Now that everything is set up, all that is left to do is run the app.
-The following command will launch the AquaPlan app in your default
-browser, and assumes that your terminal working directory is the
-‘AquaPlan’ directory of the repo:</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run aquacropgui/01_🏠_Home.py</span></code></pre></div>
-<p><strong>N.B.</strong> Because the path contains an emoji, you will
-have to type the command up to <strong>/01_</strong> and then press the
-‘Tab’ key to autocomplete the path.</p>
+<p>Now that everything is set up, all that is left to do is run the app. The following command will launch the AquaPlan app in your default browser, and assumes that your terminal working directory is the ‘AquaPlan’ directory of the repo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run aquacropgui/01_🏠_Home.py</span></code></pre></div>
+<p><strong>N.B.</strong> Because the path contains an emoji, you will have to type the command up to <strong>/01_</strong> and then press the ‘Tab’ key to autocomplete the path.</p>
 </div>
 </div>
 
