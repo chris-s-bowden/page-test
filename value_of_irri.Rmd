@@ -9,19 +9,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 \
 
-Irrigation plays a critical role in enhancing agricultural productivity and supporting drought resilience. In this exercise, you will use the AquaPlan app to explore how the value and benefits derived from irrigation varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Indiana, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). You will demonstrate the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing drought risk exposure in agricultural production regions where rainfall levels vary substantially from one year to another. 
+Irrigation plays a critical role in enhancing agricultural productivity and supporting drought resilience. In this exercise, you will use the AquaPlan app to explore how the value and benefits derived from irrigation varies between different locations and over time. You will assess the yield benefits and water requirements for irrigated maize production in three locations across the United States (Ohio, California, and Nebraska), which vary in terms of the amount and variability of rainfall received during the maize growing season (May to September). You will demonstrate the value of irrigation as a means of both increasing crop yields in areas with insufficient rainfall, and reducing drought risk exposure in agricultural production regions where rainfall levels vary substantially from one year to another. 
 
 \
 
-# Site 1 - Richmond, Indiana
+# Site 1 - Dayton, Ohio
 
 ## Select a field
-Start by investigating the eastern corn belt of the United States, a region where the majority of agriculture is currently rainfed. Begin by launching AquaPlan ('Launch App' button at the top-right of this page) and navigating to the 'Value of Irrigation' tab. Then, enter the following coordinates (39.909609, -84.900238) in the search box to locate an example field in the vicinity of Richmond. Note, you will then need to use a marker to select a point in the field as shown on the map below. AquaPlan will automatically retrieve weather data for the site from the Daymet gridded weather dataset produced by Oak Ridge National Laboratory in the United States along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).
+Start by investigating the eastern corn belt of the United States, a region where the majority of agriculture is currently rainfed. Begin by launching AquaPlan ('Launch App' button at the top-right of this page) and navigating to the 'Value of Irrigation' tab. Then, enter the following coordinates (39.881355, -84.354422) in the search box to locate an example field in the vicinity of Dayton, Ohio Note, you will then need to use a marker to select a point in the field as shown on the map below. AquaPlan will automatically retrieve weather data for the site from the Daymet gridded weather dataset produced by Oak Ridge National Laboratory in the United States along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).
 
 \
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_A.png')
+knitr::include_graphics('imgs/OhioMap.png')
 ```
 
 \
@@ -42,7 +42,7 @@ Select the 'Run AquaCrop' tab and browse through all of the model parameters tha
 <!-- could add breakdown of each slider/parameter set here? -->
 
 ## Visualise and interpret outputs
-Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Indiana. Using these plots, try to answer the following questions.
+Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Ohio Using these plots, try to answer the following questions.
 
 \
 
@@ -55,10 +55,10 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
   <div id="Block1" class="collapse">  
   
   \
-  In the majority of years, the majority of the crop's water needs are fully met by rainfall and irrigation is generally minimal. In some years with lower than average rainfall (e.g., 1999, 2007, 2012), a larger amount of irrigation is required to meet the maize crop's water demands. However, even in these years, the amount of irrigation water used is still less than the amount of water provided by rainfall during the growing season.
+  In the majority of years, the majority of the crop's water needs are met by rainfall. Additional irrigation water use is generally minimal, although in some years with lower than average rainfall (e.g., 1999, 2007, 2012), a larger amount of irrigation is required to meet the maize crop's water demands. However, even in these years, the amount of irrigation water used is typically still less than the amount of water provided by rainfall during the growing season.
     
   ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_B.png')
+  knitr::include_graphics('imgs/OhioRainfall.png')
   ```
   
   </div>
@@ -70,15 +70,15 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
 :::: {.whitebox .question data-latex="{question}"}
 **Question 1.b.**
 
-Now looking at the 'rainfed vs irrigated yield' plot, do you think that rainfall in Richmond in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
+Now looking at the 'rainfed vs irrigated yield' plot, do you think that rainfall in Dayton, Ohio in the eastern corn belt is generally sufficient to meet the water requirements of maize in the majority of years?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Show/Hide Example </button>  
   <div id="Block2" class="collapse">  
   
-  Generally, rainfall is sufficient for maize's water demands in Richmond, Indiana. This can be seen by the similar levels of yield acheived for both rainfed and irrigated maize production in most years, along with the stability of rainfed yields across years. The largest yield gains from irrigation are typically found in years with lowest rainfall (e.g., 1999, 2007, 2012), but there are also small yield gains from irrigation in other years (e.g., 1991). These reflect years where relatively small amounts of supplemental irrigation play an important role in buffering crops against dry spells within the growing season, which can occur even when total seasonal rainfall is sufficient to meet crop needs. 
+  Generally, rainfall is sufficient for maize's water demands in Dayton, Ohio. This can be seen by the similar levels of yield achieved for both rainfed and irrigated maize production in most years, along with the stability of rainfed yields across years. The largest yield gains from irrigation are typically found in years with lowest rainfall (e.g., 1999, 2012), but even in these years the marginal yield gains from irrigation are small compared to rainfed yields. Small yield gains from irrigation are observed in other years where rainfall rates are average or above average (e.g., 2018, 2020). This highlights the role of supplemental irrigation in buffering crops against dry spells within the growing season, which can occur even when total seasonal rainfall is sufficient to meet crop needs. 
   
   ```{r echo=FALSE, out.width='100%'}
-  knitr::include_graphics('imgs/tut_1_C.png')
+  knitr::include_graphics('imgs/OhioYields.png')
   ```
   
   </div>
@@ -100,7 +100,7 @@ We'll now run the model for a different location in the US. Return to the 'Selec
 <!-- Map disappears when switching tabs, can't find a solution to this apart from refreshing page, not sure what function is responsible for the map disappearing -->
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_D.png')
+knitr::include_graphics('imgs/CaliforniaMap.png')
 ```
 
 \ 
@@ -117,7 +117,7 @@ Use the checkboxes on the 'Visualize outputs' tab to answer the following questi
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.a.**
 
-Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot from the eastern corn belt in the first part of the exercise?
+Using the 'total rainfed and irrigation' plot, how does the amount of rainfall and irrigation water use vary across the 30-year (1991-2020) simulation period? What differences do you notice between this plot and the plot for the site in Ohio in the eastern corn belt from the first part of the exercise?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
   <div id="Block3" class="collapse">  
@@ -125,7 +125,7 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
   The amount of irrigation required to meet maize crop water requirements in much larger than the amount of rainfall received in every year, due to the extremely low rainfall during the summer growing season in central California. This represents the opposite pattern to the field in the eastern Corn Belt, where irrigation was only required to supplement shortfalls of rainfall in a subset of historic years.
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_1_E.png')
+    knitr::include_graphics('imgs/CaliforniaRainfall.png')
   ```
   
   </div>
@@ -136,7 +136,7 @@ Using the 'total rainfed and irrigation' plot, how does the amount of rainfall a
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.b.**
 
-Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production likely to be viable in this site in Central California and, if so, in which years? How does the difference between rainfed and irrigated yields compare to what you observed previously for the site in Indiana?
+Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production likely to be viable in this site in Central California and, if so, in which years? How does the difference between rainfed and irrigated yields compare to what you observed previously for the site in Ohio?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Show/Hide Example </button>  
   <div id="Block4" class="collapse">  
@@ -144,7 +144,7 @@ Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production li
   Rainfed maize production is not viable across all 30 years simulated here, with yields never exceeding 2 t/ha compared to irrigated yield consistently exceeding 14 t/ha. This large and consistent difference between rainfed and irrigated yields is a stark contrast to the site in the eastern Corn Belt where irrigation resulted in little to no increase in yield in the majority of years. Variability in yields is only low in California with consistent use of irrigation, whereas yield stability in the eastern Corn Belt site is possible even under rainfed production conditions.
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_1_F.png')
+    knitr::include_graphics('imgs/CaliforniaYields.png')
   ```
   
   </div>
@@ -159,7 +159,7 @@ Looking at the 'rainfed vs irrigated yield' plot, is rainfed maize production li
 In the final part of this exercise, we will apply AquaCrop to simulate maize yields and irrigation requirements for a third location - this time in Imperial, Nebraska in the central United States. Enter the following coordinates (40.499672, -101.686346) into the search box and re-run the model again using the default parameters. 
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_1_G.png')
+knitr::include_graphics('imgs/NebraskaMap.png')
 ```
 
 \
@@ -171,15 +171,15 @@ Use the outputs for the new simulation for the site in Nebraska, along with the 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 3.a.**
 
-How does the amount and variability of seasonal rainfall differ in the site in southwestern Nebraska compared to that of the sites in central California and Indiana?   
+How does the amount and variability of seasonal rainfall differ in the site in southwestern Nebraska compared to that of the sites in central California and Ohio?   
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block5"> Show/Hide Example </button>  
   <div id="Block5" class="collapse">  
   
-  The sites in California (dry) and Indiana (wet) represented sites with consistently low or high annual rainfall patterns. In contrast, seasonal rainfall at the Nebraska site shows greater inter-annual variation, with some years receive similar levels of rainfall to the site in Indiana but other years receive very little rainfall during the growing season. 
+  The sites in California (dry) and Ohio (wet) represented sites with consistently low or high annual rainfall patterns. In contrast, seasonal rainfall at the Nebraska site shows greater inter-annual variation, with some years receive similar levels of rainfall to the site in Ohio but other years receive very little rainfall during the growing season. 
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_1_H.png')
+    knitr::include_graphics('imgs/NebraskaRainfall.png')
   ```
   
   </div>
@@ -196,10 +196,10 @@ How does the inter-annual variability in seasonal rainfall for the site in Nebra
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block6"> Show/Hide Example </button>  
   <div id="Block6" class="collapse">  
   
-  Years with lower rainfall require the farmer to use a greater amount of irrigation to meet maize's water demands (e.g. 2012 and 2013). In low rainfall years, irrigation is needed to make up the deficit in rainfall and avoid crop water stress and yield losses. As a result, the absolute yield benefits (i.e., the difference between irrigated and rainfed yields) of irrigation are greatest in low rainfall years. Irrigation benefit is highest in 2017 (one of lowest rainfall years, white arrows) and lowest in 1996 (highest rainfall year, yellow arrows).
+  Years with lower rainfall require the farmer to use a greater amount of irrigation to meet maize's water demands (e.g. 2012 and 2013). In low rainfall years, irrigation is needed to make up the deficit in rainfall and avoid crop water stress and yield losses. As a result, the absolute yield benefits (i.e., the difference between irrigated and rainfed yields) of irrigation are greatest in low rainfall years. Irrigation benefit is highest in 2017 (one of lowest rainfall years) and lowest in 1996 (highest rainfall year).
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_1_I.png')
+    knitr::include_graphics('imgs/NebraskaYields.png')
   ```
   
   </div>
@@ -216,10 +216,10 @@ Which years have the highest levels of irrigation water productivity? Can you us
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Show/Hide Example </button>  
   <div id="Block7" class="collapse">  
   
-  Irrigation water productivity was highest in 2017 (white arrows) and 2020 (yellow arrows). These years are both among the lowest rainfall years of the 30-year period, as shown by the top plot. Rainfed maize yields were very low in both of these years, as shown by the middle plot, meaning that the productivity of irrigation water was high. In contrast, irrigation water productivity was slightly lower in other major drought years, such as 2003 and 2012. This is because although yields benefits of irrigation were large, irrigation water requirements were also higher than in 2017 and 2020 constraining the overall productivity of water in 2003 and 2012. This highlights that irrigation water productivity changes from year to another will depend on changes in both crop yields and water use by farmers. 
+  Irrigation water productivity was highest in 2017 and 2020. These years are both among the lowest rainfall years of the 30-year period, as shown by the top plot. Rainfed maize yields were very low in both of these years, as shown by the middle plot, meaning that the productivity of irrigation water was high. In contrast, irrigation water productivity was slightly lower in other major drought years, such as 2003 and 2012. This is because although yields benefits of irrigation were large, irrigation water requirements were also higher than in 2017 and 2020 constraining the overall productivity of water in 2003 and 2012. This highlights that irrigation water productivity changes from year to another will depend on changes in both crop yields and water use by farmers. 
     
   ```{r echo=FALSE, out.width='100%'}
-    knitr::include_graphics('imgs/tut_1_J.png')
+    knitr::include_graphics('imgs/NebraskaWP.png')
   ```
   
   </div>
