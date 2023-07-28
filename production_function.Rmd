@@ -13,27 +13,19 @@ Agriculture is the largest sectoral user of water globally. Identifying ways to 
 
 # Step 1 - Develop production function
 ## Select site
-For this exercise, all activities will focus on the same example case study - irrigated soybean production in Mato Grosso ("great woods") state in the Amazonian region of central Brazil. First, launch AquaPlan ('Launch App' button at the top-right of this page) and navigate to the 'Crop-water production function' tab. Then, enter the following coordinates (-13.249141, -57.983966) in the search box to select an example field in Mato Grosso state in Brazil as shown on the map below. AquaPlan will automatically retrieve weather information for the site from the NASA Power dataset along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).
+For this exercise, all activities will focus on the same example case study - soybean production in central Argentina in South America. First, launch AquaPlan ('Launch App' button at the top-right of this page) and navigate to the 'Crop-water production function' tab. Then, enter the following coordinates (-32.573, -63.7726) in the search box to select an example field in the province of Cordoba, Argentina as shown on the map below. AquaPlan will automatically retrieve weather information for the site from the NASA Power dataset along with soil properties from the global SoilGrids dataset produced by the International Soil Reference and Information Centre (ISRIC).
 
 ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_A.png')
+knitr::include_graphics('imgs/CordobaMap.png')
 ```
 
 \
 
 ## Setup and run AquaCrop
-Select the 'Run AquaCrop' tab and browse through all of the model parameters that can be tweaked. First, set the crop type to Soybean. Then select the 'Economics' tab, and change the values of crop price, water cost, and production cost to \$400 per tonne, $0.5 per ha-mm, and \$700 per ha respectively. Leave all other parameters at their default values, but note the different options that can be changed under the 'Irrigation' tab. This includes the application efficiency of irrigation, as well as the soil moisture target levels used to trigger irrigation. AquaPlan will run for all potential soil moisture target levels between the maximum and minimum values selected, with the number of unique targets between these upper and lower bounds controlled by the selected increment. 
-
-\
-
-```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_X.png')
-```
-
-\
+Select the 'Run AquaCrop' tab and browse through all of the model parameters that can be tweaked. First, set the crop type to Soybean and change the planting date to 1 November to match the typical start of the main soybean season in Argentina. Select the 'Water Content' tab and change the initial soil water content to 50\% of total available water, reflecting that soybean production starts at end of the prior dry season. Next, select the 'Irrigation' tab and change parameters to match a typical furrow irrigation system as follows leaving all parameters at their default values: (i) maximum irrigation depth = 50 mm/ha/day; and (ii) application efficiency = 50\%. Finally, select the 'Economics' tab, and change the values of crop price, water cost, and production cost to \$500 per tonne, $0.75 per ha-mm, and \$700 per ha respectively. Once these chages are completed, select 'Run Model' and AquaPlan will run for all selected years and potential soil moisture target levels between the maximum and minimum values selected, with the number of unique targets between these upper and lower bounds controlled by the selected increment. 
 
 ## Interpret outputs
-Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Mato Grosso. Using the Yield-Irrigation figure and data to explore the simulated crop-water production functions, and answer the following questions:
+Navigate to the 'Visualize outputs' tab, and use the checkboxes to explore the outputs of the AquaPlan simulations for the site in Cordoba province. Using the Yield-Irrigation figure and data to explore the simulated crop-water production functions, and answer the following questions:
 
 \
 
@@ -45,10 +37,16 @@ Does the same amount of irrigation result in the same amount of yield each year?
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block1"> Show/Hide Example </button>  
   <div id="Block1" class="collapse">  
   
-  The same amount of irrigation (e.g. 350 mm, red line) results in a wide range of yields each year (2.0 to 4.3 t/ha, green lines). The water requirements of the soybean crop are met through a combination of rainfall and irrigation. As shown in the figure below, rainfall varies a lot from one year to another in the study area. As a result, a fixed amount of irrigation my be sufficient to fully meet crop water needs in some years but be insufficient in other years, potentially resulting in crop stress and yield reductions. 
+  The same amount of irrigation results in a wide range of yields each year. For example, a seasonal irrigation depth of 400mm produces an average yield of approximately 3.7 t/ha but yields range from around 1.4 t/ha to 4.8 t/ha in individual years. 
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_B.png')
+knitr::include_graphics('imgs/CordobaYields_a.png')
+  ```
+
+The water requirements of the soybean crop are met through a combination of rainfall and irrigation. However, as shown in the figure below, rainfall varies a lot from one year to another in the study area. As a result, a fixed amount of irrigation my be sufficient to fully meet crop water needs in some years but be insufficient in other years, potentially resulting in crop stress and yield reductions. 
+
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/CordobaRainfall.png')
   ```
   
   </div>
@@ -65,11 +63,11 @@ Irrigation is generally seen as a way to increase crop yields. Does higher irrig
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2"> Show/Hide Example </button>  
   <div id="Block2" class="collapse">  
   
-  Irrigation helps a farmer to meet their crop's water requirements when there is insufficient rainfall prior or during the growing season. However, if the local rainfall is sufficient for meeting the crop's requirement, then irrigation will have no additional benefit to yield. This can be seen in the crop-water production functions for individual years (grey lines) shown in the figure below. For example, as irrigation increases from 400 mm to 500 mm, soybean yields continue to increase in some years but have a flat response (no yield change) in other years where the crop's water needs have already been fully satisified. 
+  Irrigation helps a farmer to meet their crop's water requirements when there is insufficient rainfall prior to and/or during the growing season. However, if local rainfall is sufficient to meet the crop's water needs, irrigation will have limited or no additional benefit to yield. This can be seen in the crop-water production functions for individual years (grey lines) shown in the figure below. For example, as irrigation increases from 400 mm to 500 mm, soybean yields on average increase and in some years have large increases beyond this range. However, in other years yield changes are negligible (no yield change) if irrigation is increased beyond 400mm as the crop's water needs have already been fully satisfied in these years.
   
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_C.png')
+knitr::include_graphics('imgs/CordobaYields_b.png')
   ```
   
   </div>
@@ -79,22 +77,31 @@ knitr::include_graphics('imgs/tut_2_C.png')
 \
 
 # Step 2 - Identify optimal management practices
-One of the main uses of crop-water production functions is to assess the value of alternative irrigation management decisions that can be made by a farmer. For example, crop-water production functions can be used to determine the optimal amount of irrigation water use - and associated management rules - for a given farmer and production system. The definition of 'optimal' will also vary depending on the objective of the farmer, for example when comparing goals of optimising profits or yields from irrigation water inputs. Using the outputs for the site in Mato Grosso, complete the following questions to explore how the crop-water production simulated by AquaPlan can be used to guide and inform efficient use of water by farmers.
+One of the main uses of crop-water production functions is to assess the value of alternative irrigation management decisions that can be made by a farmer. For example, crop-water production functions can be used to determine the optimal amount of irrigation water use - and associated management rules - for a given farmer and production system. The definition of 'optimal' will also vary depending on the objective of the farmer, for example when comparing goals of optimising profits or yields from irrigation water inputs. Using the outputs for the site in Cordoba province, complete the following questions to explore how the crop-water production simulated by AquaPlan can be used to guide and inform efficient use of water by farmers.
 
 \
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.a.**
 
-Imagine a farmer wants to select the irrigation amount that maximises yield. Using the average production function over all years, what irrigation amount would this be? What is associated irrigation strategy (i.e. soil moisture target)? 
+Imagine a farmer wants to select the irrigation amount that maximises soybean yield. Using the average production function over all years, what irrigation amount would this be? What is associated irrigation strategy (i.e. soil moisture target)? 
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block3"> Show/Hide Example </button>  
   <div id="Block3" class="collapse">  
   
-  Based on the average crop-water production function averaged over all historic simulated years, the optimum irrigation amount to maximise yield would be 620 mm. Using the Yield-SMT relationship figure, we can see that this is associated with a soil moisture target (SMT) strategy of 70 \% during the growing season.
+Based on the average crop-water production function averaged over all historic simulated years, the optimum irrigation amount to maximise yield would be around 780 mm. This would acheive an average yield of approximately 4.65 t/ha.
+
+
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/CordobaYields_c.png')
+  ```
+  
+\
+  
+Using the Yield-SMT relationship figure, we can see that this is associated with a soil moisture target (SMT) strategy of XX \% during the growing season to acheive this level of yield maximisation on average over all years.
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_D.png')
+knitr::include_graphics('imgs/CordobaYieldsSMT_a.png')
   ```
   
   </div>
@@ -106,16 +113,22 @@ knitr::include_graphics('imgs/tut_2_D.png')
 :::: {.whitebox .question data-latex="{question}"}
 **Question 2.b.**
 
-Maximising economic returns to water is also an important goal for many farmers and water managers. Given the specified cost of water, crop price and fixed production costs for your soybean case study, what would be the level of irrigation that the farmer should pick in order to maximise profits (averaged over all years)?. Is this irrigation amount higher or lower than the amount that maximises yield, and why might that be?
+Maximising economic returns to water is also an important goal for many farmers and water managers. Given the specified cost of water, crop price and fixed production costs for soybeans in Cordoba province in Argentina, what would be the level of irrigation that the farmer should pick in order to maximise profits (on average over all years)? Is this irrigation amount higher or lower than the amount that maximises yield, and why might that be?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block4"> Show/Hide Example </button>  
   <div id="Block4" class="collapse">  
   
-  Seasonal irrigation of 550 mm is the optimum value to maximise profits and would be acheived by lowering the farmer's SMT irrigation strategy to 55\%. The profit-maximising amount of irrigation is lower than the amount that maximises yield. This difference is explained by the shape of the crop-water production function. As seen in Section 1 of this tutorial, yield returns to irrigation diminish beyond the point that the majority of crop's water requirements have been satisified. However, the cost of each additional unit of irrigation remains the same. As a result, it may be optimal for the farmer to not use additional irrigation if the costs exceed the yield benefits, resulting in a profit-maximising level of water use than is less than that for a goal of yield maximisation.
+  Seasonal irrigation of around 660 mm is the optimum value to maximise profits ($1,070/ha) and would be achieved by lowering the farmer's SMT irrigation strategy to 50 \%. The profit-maximising amount of irrigation is lower than the amount that maximises yield. This difference is explained by the shape of the crop-water production function. As seen in Section 1 of this tutorial, yield returns to irrigation diminish beyond the point that the majority of crop's water requirements have been satisfied. However, the cost of each additional unit of irrigation remains the same. As a result, it may be optimal for the farmer to not use additional irrigation if the costs exceed the yield benefits. This results in a profit-maximising level of water use that is less than that for a goal of yield maximisation, with the optimal SMT also reduced to reflect the fact that the farmer needs to irrigate less often to reduce overall water use during the season to the profit-maximising level.
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_E.png')
+knitr::include_graphics('imgs/CordobaProfits_a.png')
   ```
+
+\
+  
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/CordobaProfitsSMT_a.png')
+```
   
   </div>
 
@@ -132,7 +145,7 @@ knitr::include_graphics('imgs/tut_2_E.png')
 <!--   <div id="Block5" class="collapse">   -->
 
 <!-- <!-- Not sure why Water productivity graphs don't represent the gradient of yield/irri graphs, -->
-<!-- would assume that section of steepest gradient represents highest water productivity --> -->
+<!-- would assume that section of steepest gradient represents highest water productivity -->
 
 <!-- <!--   ```{r echo=FALSE, out.width='100%'} --> 
 <!-- <!-- knitr::include_graphics('imgs/tut_2_F.png') --> 
@@ -145,7 +158,7 @@ knitr::include_graphics('imgs/tut_2_E.png')
 <!-- \ -->
 
 # Step 3 - Assess effects of climate variability
-As highlighted in the previous tutorial on the value of irrigation, in many parts of the world irrigation is used to supplement rainfall. Irrigation requirements therefore vary from one year to another depending on growing season weather conditions, which may affect a farmer's optimal irrigation management rules and choices. To explore the effects of year to year climate variability in more detail, check the box next to 'Aggregated stats' on the 'Visualize outputs' tab. Using this data and the other figures generated by AquaPlan for the Mato Grosso site, answer the following questions:
+As highlighted in the previous tutorial on the value of irrigation, in many parts of the world irrigation is used to supplement rainfall. Irrigation requirements therefore vary from one year to another depending on growing season weather conditions, which may affect a farmer's optimal irrigation management rules and choices. To explore the effects of year to year climate variability in more detail, check the box next to 'Aggregated stats' on the 'Visualize outputs' tab. Using this data and the other figures generated by AquaPlan for the site in Cordoba province, answer the following questions:
 
 \
 
@@ -168,7 +181,6 @@ As highlighted in the previous tutorial on the value of irrigation, in many part
 <!-- :::: -->
 
 <!-- \ -->
-\
 
 :::: {.whitebox .question data-latex="{question}"}
 **Question 3.a.**
@@ -178,10 +190,10 @@ Which years have the highest and lowest rainfall during the growing season? How 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block7"> Show/Hide Example </button>  
   <div id="Block7" class="collapse"> 
   
-  2011 has the lowest rainfall, whereas the highest rainfall was during the XXXX season. The economically optimal levels of irrigation are around 620 mm and XXX mm in 2011 and XXXX, respectively. These values differ substantially from the optimal average irrigation depth of 550 mm over all years that we found earlier. This highlights that optimal irrigation requirements vary from year to year as a result of different levels of rainfall during the growing season, which affect the amount of supplemental irrigation needed to avoid crop stress and yield losses.
+  XXXX has the lowest rainfall, whereas the highest rainfall was during the XXXX season. The economically optimal levels of irrigation are around XXX mm and XXX mm in XXXX and XXXX, respectively. These values differ from the optimal average irrigation depth of XXX mm over all years that we found earlier. This highlights that optimal irrigation requirements vary from year to year as a result of different levels of rainfall during the growing season, which affect the amount of supplemental irrigation needed to avoid crop stress and yield losses.
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_H.png')
+knitr::include_graphics('imgs/CordobaYields.png')
   ```
   
   </div>
@@ -193,16 +205,16 @@ knitr::include_graphics('imgs/tut_2_H.png')
 :::: {.whitebox .question data-latex="{question}"}
 **Question 3.b.**
 
-What are the associated economically optimal soil moisture target strategy  for the wettest and driest years? How does this differ from the optimal SMT strategy averaged over all years?
+What are the associated economically optimal soil moisture target strategy for the wettest and driest years? How does this differ from the optimal SMT strategy averaged over all years?
 
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Show/Hide Example </button>  
   <div id="Block8" class="collapse"> 
   
-  INSERT ANSWER
+The economically optimal SMT levels to maintain are XX \% and XX\% in XXXX and XXXX, respectively. 
   
-<!--   ```{r echo=FALSE, out.width='100%'} -->
-<!-- knitr::include_graphics('imgs/tut_2_I.png') -->
-<!--   ``` -->
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/CordobaYields.png')
+  ```
   
   </div>
 
@@ -210,24 +222,56 @@ What are the associated economically optimal soil moisture target strategy  for 
 
 \
 
-Return to the 'Run AquaCrop' tab and change the cost of water \$1.00 per ha-mm to simulate a scenario where there is both high demand and low availability of water in a drought year leading to an increase in water prices
+# Step 4 - Assess impacts of price changes
+
+For the final part of this tutorial, we will be exploring how optimal irrigation
+management practices are affected by changes in the price of water and commodities.
+First, return to the 'Run AquaCrop' tab and double the cost of water \$1.50 per ha-mm 
+and re-run the model to simulate a scenario where the cost of water is elevated due to 
+scarcity, policy, or other factors.
 
 \
 
 :::: {.whitebox .question data-latex="{question}"}
-**Question 3.c.**
+**Question 4.a.**
 
-How does this change in water price affect the overall profits and the optimal amount of irrigation? What would be the impact if crop prices were also increased by the same proportion (i.e. by 100\% from \$400 per tonne to $800 per tonne)?
+How does this change in water price affect the overall profits and the optimal amount of irrigation? Does it still make economic sense to irrigate soybeans in this location? 
 
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8"> Show/Hide Example </button>  
-  <div id="Block8" class="collapse"> 
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block9"> Show/Hide Example </button>  
+  <div id="Block9" class="collapse"> 
   
   Increasing the water price does not affect economically optimal amount of irrigation, but does decrease overall profits and increases the penalty for irrigating beyond an optimal amount.
+  
+
+  ```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('imgs/CordobaYields.png')
+  ```
+  
+  </div>
+
+::::
+
+\
+
+Now re-run the model once more, this time keeping the water price at \$1.50 per ha-mm but also increasing
+crop prices by the same proportion (i.e. by 100\% from \$500 per tonne to $1000 per tonne)
+
+\
+
+:::: {.whitebox .question data-latex="{question}"}
+**Question 4.a.**
+
+How does this change in crop price affect the economic returns to irrigation? How does the optimal irrigation depth
+compare to before the water and crop price changes?
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block10"> Show/Hide Example </button>  
+  <div id="Block10" class="collapse"> 
+  
   
   Doubling the crop prices more than quadruples the overall profit from an optimum irrigation amount. 
   
   ```{r echo=FALSE, out.width='100%'}
-knitr::include_graphics('imgs/tut_2_I.png')
+knitr::include_graphics('imgs/CordobaYields.png')
   ```
   
   </div>
