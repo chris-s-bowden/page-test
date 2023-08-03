@@ -16,7 +16,7 @@ navbar:
         href: production_function.html
       - text: "Exercise 3: Evaluating impacts of climate change"
         href: cc_impacts.html
-    - text: 'FAQ'
+    - text: 'Faq'
       href: faq.html
     - text: ' Launch App'
       href: https://tinyurl.com/aquaplan

@@ -338,7 +338,7 @@ div.tocify {
   </ul>
 </li>
 <li>
-  <a href="faq.html">FAQ</a>
+  <a href="faq.html">Faq</a>
 </li>
 <li>
   <a href="https://tinyurl.com/aquaplan">
@@ -364,17 +364,22 @@ div.tocify {
 </div>
 
 
-<p>In previous labs, we’ve looked at how the value of irrigation and optimal strategies change in different areas over historical time. Today, we will consider how future climate change is projected to impact crop production risks. We will then explore how irrigation could help adaptation to future climates, how specific irrigation requirements may evolve and how these changing requirements vary across future scenarios and time periods.</p>
-<div id="step-1---explore-example-data" class="section level1">
-<h1>Step 1 - Explore example data</h1>
-<p>Today, we will be using a variety of example data to demonstrate how the app works. For future reference, you are also able to upload CMIP6 data that you have downloaded yourself, so that you can assess climate change impacts for any region in the world. For this exercise, we will be looking at potato production in south-east England - select ‘Woolpit, UK’ from the example data drop-down menu:</p>
+<p><br />
+</p>
+<p>Climate change is leading to warmer temperatures and more variable rainfall patterns around the world. Understanding how changes in temperature, rainfall, and evaporative demands will impact crop production is crucial for designing strategies to make agriculture more resilient to climate change, and for ensuring that agricultural adaptation (e.g., greater use of irrigation) does not negatively impact the environment or other aspects of society. In this exercise, you will use AquaPlan to explore how climate change will impact crop production, and how changes in production risks vary across different future climate projections, for an example case study of potato production in eastern England. You will then explore strategies to sustainably adapt potato production to future changes in climate in eastern England, with a specific focus on use of irrigation to mitigate against drought risks.</p>
+<p><br />
+</p>
+<div id="step-1---explore-future-climate-projections" class="section level1">
+<h1>Step 1 - Explore future climate projections</h1>
+<div id="select-site" class="section level2">
+<h2>Select site</h2>
+<p>In this exercise, you will be using a variety of pre-processed climate data to conduct assessments of climate change impacts. First, select ‘Woolpit, UK’ from the example data drop-down menu. For future reference, you are also able to upload climate change projection data that you have downloaded and pre-processed yourself, so that you can assess climate change impacts for any region in the world. A CMIP6 data downloader tool is also provided with AquaPlan to assist with this process.</p>
 <p><br />
 </p>
 <p><img src="imgs/tut_3_A.png" width="100%" /></p>
 <p><br />
 </p>
-<p>CMIP6 is the Coupled Model Intercomparison Project phase 6 and represents an ensemble of many global climate models used to project future climate data. For our example in Woolpit, the example data that has been pre-downloaded includes data from three different CMIP6 models: CanESM5, MIROC6 and NorESM2-LM. Each model varies in the way it simulates future climate through atmospheric and oceanic processes, so it’s useful to look at more than a single model when projecting future impacts.</p>
-<p>Let’s begin to explore our future climate projection data - head to the ‘Explore data’ tab and open the ‘Info’ panel. You will see that for every model in the example data, there are five time periods and two shared socio-economic pathways (SSP245 and SSP585). The first time period is ‘historical’ which covers 1995 to 2014 because 2015 is when projections begin. The subsequent periods cover two decades each, from 2020 up to 2099. For further information on what the different SSP scenarios represent, view the info box below.</p>
+<p>After making the selection in the drop-down menu, a series of future climate data files will be loaded into the app for a site near Woolpit in Suffolk, eastern England. Climate change projections are drawn from the CMIP6 (Coupled Model Intercomparison Project phase 6). Pre-processed data files in the format required by AquaPlan are provided for a selection of different CMIP climate models (CanESM5, MIROC6 and NorESM2-LM), two alternate scenarios for future emissions trajectories (Shared Socio-economic Pathways or SSP’s - SSP245 and SSP585), and five time periods (‘historical’ - 1995 to 2014, 2020-2039, 2040-2059, 2060-2079, 2080-2099). Further information about the different SSP scenarios represent is given in the info box below.</p>
 <p><br />
 </p>
 <div class="infobox info">
@@ -383,103 +388,159 @@ div.tocify {
 Show/Hide Info
 </button>
 <div id="Block1" class="collapse">
+<p><br />
+</p>
 <p>The direction of future economic, industrial and environmental progress is uncertain. For us to produce reasonable projections of future climate impacts, it is important to identify this uncertainty by constructing a range of possible future scenarios. In the past, Representative Concentration Pathways (RCPs) were used as the only determinant of future uncertainty, providing trajectories of the atmospheric concentration of carbon dioxide under different future development scenarios. For example, RCP8.5 represents a high-emissions scenario where the total incoming and trapped solar radiation reaches 8.5 W/m<sup>2</sup> by 2100. More recently, this concept has been combined with Shared Socioeconomic Pathways (SSPs) to better quantify variations caused by additional global changes such as national population, urbanisation and GDP per capita. See the chart below for a summary of the different SSP scenarios.</p>
+<p><br />
+</p>
 <p><img src="imgs/tut_3_B.png" width="100%" /></p>
+<p><br />
+</p>
 <p>RCPs and SSPs are now combined, to represent different levels of carbon dioxide concentration achieved through each socioeconomic scenario. For example, SSP245 represents the SSP2 socioeconomic scenario, leading to RCP4.5, overall representing a middle-ground future scenario. Conversely, SSP585 represents fossil-fueled development leading to RCP8.5, representing an extremely high emissions scenario.</p>
 </div>
 </div>
 <p><br />
 </p>
-<p>Now that we know what type of data we’re working with, use the ‘Visualize weather data’ panel to answer the following questions:</p>
-<p><br />
-</p>
+</div>
+<div id="visualise-climate-projections" class="section level2">
+<h2>Visualise climate projections</h2>
+<p>Now that you have loaded the relevant climate data files into AquaPlan and learnt more about what they represent, use the ‘Visualize weather data’ panel to answer the following questions:</p>
 <div class="whitebox question">
 <p><strong>Question 1.a.</strong></p>
-<p>Across all three models, how is precipitation in Woolpit generally projected to change from historic levels in the near and far future? Does this change differ between SSP scenarios? If so, why might this be?</p>
+<p>How do minimum and maximum temperatures change over time across the three models and two alternate SSPs? Would it be reasonable to select a single model to interpret future temperature impacts, and why?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block2">
 Show/Hide Example
 </button>
 <div id="Block2" class="collapse">
-<p>Broadly, precipitation is projected to increase over autumn and winter months (Nov - Jan) and reduce over summer months (Jun/Jul/Aug). The direction of these changes remains constant between SSPs, but the magnitude of changes increases from SSP245 to SSP585. This is because SSP585 represents a higher-emissions scenario where a greater degree of warming will cause more extreme shifts in climate.</p>
-<p><img src="imgs/tut_3_C.png" width="100%" /></p>
-</div>
-</div>
-<div class="whitebox question">
-<p><strong>Question 1.b.</strong></p>
-<p>How do minimum and maximum temperatures change over time across the three models? Would it be reasonable to select a single model to interpret future temperature impacts, and why?</p>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3">
-Show/Hide Example
-</button>
-<div id="Block3" class="collapse">
-<p>In general, temperatures are projected to increase over time across all three models, and is more pronounced under SSP585 than SSP245.</p>
-<p><img src="imgs/tut_3_D.png" width="100%" /></p>
-<p>Models MIROC6 and NorESM2-LM2 project much smaller increases in temperature over time than CanESM5. It would therefore not be appropriate to use a single model of these three, but instead use an ensemble measure, such as mean or median for each projected data point. The difference between the models’ projections is highlighted in the zoomed view below:</p>
+<p><br />
+</p>
+<p>In general, both maximum and minimum temperatures are projected to increase over time across all three models, with the largest absolute increases in temperatures during the summer months. Increases in temperatures are most p and is more pronounced under SSP585 than SSP245.</p>
+<p><br />
+</p>
+<p><img src="imgs/tut_3_D.png" width="100%" /><br />
+</p>
+<p><img src="imgs/tut_3_D2.png" width="100%" /></p>
+<p><br />
+</p>
+<p>There are noticeable differences in how temperatures are projected to change when comparing between the three selected climate models. The MIROC6 and NorESM2-LM2 models both project much smaller increases in minimum and maximum temperatures over time than CanESM5. The difference between the models’ projections is highlighted in the zoomed view below for maximum temperatures. These differences highlight the importance of using multiple models when assessing potential impacts of future climate change on agriculture, in particular given that crops may have highly non-linear responses to climate changes (e.g., rapid increase in crop damage if temperature thresholds are exceeded).</p>
+<p><br />
+</p>
 <p><img src="imgs/tut_3_E.png" width="100%" /></p>
 </div>
 </div>
 <p><br />
 </p>
+<div class="whitebox question">
+<p><strong>Question 1.b.</strong></p>
+<p>How is precipitation in Woolpit projected to change from historic levels in the near and far future? Does this change differ between SSP scenarios or models? If so, why might this be?</p>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#Block3">
+Show/Hide Example
+</button>
+<div id="Block3" class="collapse">
+<p><br />
+</p>
+<p>Broadly, precipitation is projected to increase over autumn and winter months (Nov - Jan) and reduce over summer months (Jun/Jul/Aug). The direction of these changes is the same for both SSPs, but the magnitude of changes increases from SSP245 to SSP585. This is because SSP585 represents a higher-emissions scenario where a greater degree of warming will be likely to cause more extreme shifts in climate, including greater seasonal variations and volatility in precipitation.</p>
+<p><br />
+</p>
+<p><img src="imgs/tut_3_C.png" width="100%" /></p>
 </div>
-<div id="step-2---future-climate-impacts-yields" class="section level1">
-<h1>Step 2 - Future climate impacts, yields</h1>
-<p>Now that we’ve explored the climate projections for Woolpit, it’s time to assess how they impact future potato yield. Go to the ‘Run AquaCrop’ tab and leave all settings at their defaults. Due to the large number of models, you will have to scroll down quite far to press the ‘Run model’ button. The models should take no longer than a minute or two to complete.</p>
+</div>
+<p><br />
+</p>
+</div>
+</div>
+<div id="step-2---assess-climate-impacts-on-yields" class="section level1">
+<h1>Step 2 - Assess climate impacts on yields</h1>
+<div id="setup-and-run-model" class="section level2">
+<h2>Setup and run model</h2>
+<p>Now that you have explored the climate projections for Woolpit, it’s time to use these data to assess how climate change may impact future potato yield. Go to the ‘Run AquaCrop’ tab and leave all settings at their defaults. You will need to scroll down past the list of models to press the ‘Run model’ button to execute the batch of simulations. The full set of simulations should take no longer than a couple minutes to complete depending on the speed of your machine or the web server.</p>
+<p><br />
+</p>
+</div>
+<div id="explore-yield-projections" class="section level2">
+<h2>Explore yield projections</h2>
 <p>Once the models have run, use the ‘Scenario time series’ and ‘Boxplot scenario comparison’ graphs for ‘Yield (t/ha)’ to answer the following questions:</p>
 <div class="whitebox question">
 <p><strong>Question 2.a.</strong></p>
-<p>Describe the historical and projected future trends of rainfed potato yields across the three models and two scenarios. What is the difference in inter-annual variability of rainfed and irrigated yields? Why might this be?</p>
+<p>On average, how are rainfed potato yields across the three models and two SSP scenarios? How may climate change affect the inter-annual variability of rainfed yields?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block4">
 Show/Hide Example
 </button>
 <div id="Block4" class="collapse">
-<p>Overall, there is a significant degree of inter-annual variability across all models and scenarios, making it difficult to identify any long-term increase or decrease in rainfed yield. Conversely, irrigated yields have extremely low inter-annual variability. Although such stable and reliable yields are unrealistic, they represent the twofold benefit of irrigation. Irrigated crops typically have their water requirements met throughout the growing season and can use additional water to protect against heat stress. Thus, irrigated yields are typically less variable and higher on average than rainfed yields.</p>
+<p><br />
+</p>
+<p>Median rainfed crop yields vary significantly across the different time periods, SSP’s, and climate models. In general, median yields increase under SSP245 in the near to medium term future (i.e. 2020-2039 and 2040-2059) for all three models. Median yields then decline for SSP245 in later time periods, in some cases dropping slightly below the levels achieved during the historic period (e.g., NorESM2-LM model in 2080-2099). In contrast, median yields under SSP585 typically decline earlier and by greater magnitudes than for SSP245. For example, median yields averaged across the three models for SSP585 in 2080-2099 are 5.2 t/ha, compared with 9.2 t/ha for SSP245 in 2080-2099 and 9.3 t/ha in the historical period.</p>
+<p><br />
+</p>
 <p><img src="imgs/tut_3_F.png" width="100%" /></p>
+<p><br />
+</p>
+<p>From the figure above, it is noticeable that - especially under SSP585 - there is a dramtic increase in inter-annual volatility of rainfed potato yields (represented by the spread of the boxplots). This is driven by reductions in precipitation during the summer growing season and increased incidences of extreme high temperatures that damage potato growth and yield formation. These changes are most pronounced for later time periods and for the CanESM5 and NorESM2-LM models, which both project larger changes in precipitation and temperatures during the summer months than the MIROC6 model.</p>
 </div>
 </div>
 <div class="whitebox question">
 <p><strong>Question 2.b.</strong></p>
-<p>In the ‘Scenario time series’ panel, isolate the rainfed yields under SSP245. Imagine you are looking to produce a single yield projection per year, using data from all three models. By comparing the results across the three models, explain why the median is a more suitable summary measure than the mean?</p>
+<p>Are the impacts of climate change on irrigated yields the same as rainfed yields? What do the differences you observe suggest about the main drivers of future production risks?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block5">
 Show/Hide Example
 </button>
 <div id="Block5" class="collapse">
-<p>In general, it’s useful to use the median value from a model ensemble because the median represents a model-predicted value whereas the mean is not directly produced by any single model. Specifically, this rainfed plot shows a large range of inter-annual variation that is often not <em>in phase</em> between models. If we were to use the mean of each year, then it is likely that a large degree of this inter-annual variation would be removed through averaging. Thus, to create a representative average of these three models, selecting the ‘middle’ model value for each year would be best - because it both represents a real model output, and retains more variability than the mean.</p>
-<p><img src="imgs/tut_3_F.png" width="100%" /></p>
+<p><br />
+</p>
+<p>Previously, we saw that rainfed potato yields were expected to become much more volatile, and ultimately decline on average in the long-term future especially under more extreme climate change projections (e.g. SSP585). In contrast, the figures below shown irrigated yields - both individually and expressed as the difference between irrigated and rainfed yields. These figures show that irrigated potato yields are projected to increase over time, with the largest increases in median yields occurring in 2080-2099 and for SSP585. Variability in irrigated potato yields is also much smaller than for rainfed yields, with irrigation providing a premium of over 10 t/ha in some years by 2080-2099 under SSP585 for all three models.</p>
+<p><br />
+</p>
+<p><img src="imgs/tut_3_J.png" width="100%" /></p>
+<p><br />
+</p>
+<p><img src="imgs/tut_3_I.png" width="100%" /></p>
+<p><br />
+</p>
+<p>We saw earlier that climate change is projected to lead to both lower precipitation and higher minimum and maximum temperatures during the potato growing season. Under these conditions, irrigation provides big yield benefits for farmers by enabling them to protect their potato crop against rainfall deficits while at the same time exploiting the positive effects of increased temperatures and CO2 fertilisation for crop growth and development of harvestable yield. It is important to note that these results suggest that temperatures in Woolpit are not projected to regularly exceed critical thresholds for damaging potatoes under any future climate change scenario simulated. However, if temperatures were to exceed critical thresholds then this would negatively affect both irrigated and rainfed yields.</p>
 </div>
 </div>
+<p><br />
+</p>
+</div>
+</div>
+<div id="step-3---evaluate-sustainability-of-irrigation" class="section level1">
+<h1>Step 3 - Evaluate sustainability of irrigation</h1>
+<p>The previous step demonstrated the potential benefits of irrigation as a means of adapting to climate change for potato production at the site in Woolpit, eastern England. However, eastern England is also a region where water resources are becoming increasingly scarce, and there is growing competition for water between domestic users, industry, the environment, and agriculture during dry summer months. Understanding the water requirements of irrigation under different future climate change projections is therefore important to determine how agricultural water demands may impact other users and ecosystems, and to develop strategies for fair and sustainable use of limited freshwater resources.</p>
+<p>In this context, use the ‘Water use comparison’ figures to explore how irrigation water demands for potato production will evolve under different future climate projections and answer the questions below:</p>
 <div class="whitebox question">
-<p><strong>Question 2.c.</strong></p>
-<p>Using the ‘Scenario time series’, what do you notice about the projected irrigated potato yields under SSP245 and SSP585? Does this match your expectations? What is a potential explanation for this notable difference?</p>
+<p><strong>Question 3.a.</strong></p>
+<p>How is irrigation water use projected to change across the three models and two SSP scenarios? Will peak levels of water use likely be higher/lower/same compared to historic under future climate change?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block6">
 Show/Hide Example
 </button>
 <div id="Block6" class="collapse">
-<p>We saw earlier that SSP585 has a greater magnitude of changes in precipitation and greater increases in both minimum and maximum temperatures. You could reasonably expect increases in heat stress and irrigation water requirements to reduce irrigated yields. However, we can see clearly in the plot below that irrigated yield is projected to have a greater increase under SSP585 than SSP245. Specifically, this is likely caused by the increasing temperatures benefitting crop growth. Crop yield can benefit from higher temperatures when there is sufficient crop water availability from irrigation. The crop can use evapotranspiration to maintain safe leaf temperatures whilst maximising growth and therefore yield.</p>
-<p><img src="imgs/tut_3_I.png" width="100%" /></p>
+<p><br />
+</p>
+<p>Irrigation water use is generally projected to increase as we project further into the future and for more extreme emissions scenarios. For example, median annual irrigation water use, averaged across the three climate models, is 278 mm under SSP585 for the period 2080-2099, compared to 186 mm under SSP245 for the period 2020-2039 - a difference of almost 50%. Irrigation water use typically is highest for CanESM5 and NorESM2-LM models under both SSP’s, reflecting the fact that these models predict lower precipitation and higher temperatures (the latter of which directly correlates to crop evapotranspiration demands).</p>
+<p><br />
+</p>
+<p><img src="imgs/tut_3_G.png" width="100%" /></p>
+<p><br />
+</p>
+<p>Under almost all combinations of models, scenarios, and future time periods, the peak annual irrigation water use per year is projected to be higher due to climate change than in the historic period. For water management, this is important as elevated peak water demands will usually occur during drought years when demands from other users will also be high, increasing risks of conflict between users or damage to freshwater-dependent ecosystems.</p>
 </div>
 </div>
-</div>
-<div id="step-3---future-climate-impacts-water-use" class="section level1">
-<h1>Step 3 - Future climate impacts, water use</h1>
 <div class="whitebox question">
-<p><strong>Question 3.a.</strong></p>
-<p>XXXXX</p>
+<p><strong>Question 3.b.</strong></p>
+<p>How do changes in irrigation water use and crop yields combine to influence the productivity of water use in potato production? How might farmers improve productivity of water use further?</p>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#Block7">
 Show/Hide Example
 </button>
 <div id="Block7" class="collapse">
-<p>XXXXX</p>
-<p><img src="imgs/tut_3_G.png" width="100%" /></p>
-</div>
-</div>
-<div class="whitebox question">
-<p><strong>Question 3.a.</strong></p>
-<p>XXXXX</p>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#Block8">
-Show/Hide Example
-</button>
-<div id="Block8" class="collapse">
-<p>XXXXX</p>
+<p><br />
+</p>
+<p>The productivity of irrigation water use - expressed as the difference between irrigated and rainfed potato yields in kilograms divided by the number of millimeters of applied irrigation - is generally increasing under climate change. Largest gains are found for later time periods and more extreme SSP scenarios. When comparing across models, irrigation water productivity and the CanESM5 and NorESM2-LM models compared to the MIROC6 model. This reflects the fact that these models typically produce the largest yield differentials between irrigated and rainfed production, whereas changes in irrigation water use show lower variations across the three models.</p>
+<p><br />
+</p>
 <p><img src="imgs/tut_3_H.png" width="100%" /></p>
+<p><br />
+</p>
+<p>One of the ways through which a farmer could improve their water productivity further is by changing irrigation management practices. For example, by improving irrigation efficiency or changing the level of soil moisture at which irrigation is triggered so as to avoid crop water stress but minimise losses of water that do not benefit the crop such as soil evaporation or deep percolation. In doing so, a farmer could limit water use increases while at the same time maintaining most of the observed yield benefits from climate change. However, it is important to note that, while measures may help to limit future increases in irrigation application rates, they may be less effective at reducing the consumptive water use (i.e. evapotranspiration) of the crop which depends primarily on the length of the growing season and weather conditions.</p>
 </div>
 </div>
 </div>
